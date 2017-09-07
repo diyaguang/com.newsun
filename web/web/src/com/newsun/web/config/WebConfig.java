@@ -14,7 +14,7 @@ import org.thymeleaf.templateresolver.ITemplateResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.newsun.web.entity")
+@ComponentScan("com.newsun.web")
 public class WebConfig extends WebMvcConfigurerAdapter{
     @Bean
     public ViewResolver viewResolver(SpringTemplateEngine templateEngine){
