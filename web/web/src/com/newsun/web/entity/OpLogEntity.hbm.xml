@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.newsun.web.entity.OpLogEntity" table="OpLog" schema="dygstudio">
+        <id name="id">
+            <column name="ID" sql-type="varchar(40)" length="40"/>
+        </id>
+        <property name="model">
+            <column name="Model" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="opType">
+            <column name="OpType" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="userId">
+            <column name="UserID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="opDate">
+            <column name="OpDate" sql-type="datetime" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

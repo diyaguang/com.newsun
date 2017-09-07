@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.newsun.web.entity.EmailEntity" table="Email" schema="dygstudio">
+        <id name="id">
+            <column name="ID" sql-type="varchar(40)" length="40"/>
+        </id>
+        <property name="userId">
+            <column name="UserID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="title">
+            <column name="Title" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="contents">
+            <column name="Contents" sql-type="text" not-null="true"/>
+        </property>
+        <property name="sendDate">
+            <column name="SendDate" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="createDate">
+            <column name="CreateDate" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="status">
+            <column name="Status" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="isDel">
+            <column name="IsDel" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="editId">
+            <column name="EditID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

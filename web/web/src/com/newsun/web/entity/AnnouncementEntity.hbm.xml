@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.newsun.web.entity.AnnouncementEntity" table="Announcement" schema="dygstudio">
+        <id name="id">
+            <column name="ID" sql-type="varchar(40)" length="40"/>
+        </id>
+        <property name="code">
+            <column name="Code" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="announcementType">
+            <column name="AnnouncementType" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="title">
+            <column name="Title" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="contents">
+            <column name="Contents" sql-type="text" not-null="true"/>
+        </property>
+        <property name="announcementDate">
+            <column name="AnnouncementDate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="note">
+            <column name="Note" sql-type="varchar(500)" length="500" not-null="true"/>
+        </property>
+        <property name="approveState">
+            <column name="ApproveState" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="inputUserId">
+            <column name="InputUserID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="inputDate">
+            <column name="InputDate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="modifyUserId">
+            <column name="ModifyUserID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="modifyDate">
+            <column name="ModifyDate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="state">
+            <column name="State" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="isDel">
+            <column name="IsDel" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="editId">
+            <column name="EditID" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

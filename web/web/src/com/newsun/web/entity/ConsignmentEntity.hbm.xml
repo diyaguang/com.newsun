@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.newsun.web.entity.ConsignmentEntity" table="Consignment" schema="dygstudio">
+        <id name="id">
+            <column name="ID" sql-type="varchar(40)" length="40"/>
+        </id>
+        <property name="code">
+            <column name="Code" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="expressId">
+            <column name="ExpressID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="saleId">
+            <column name="SaleID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="sendDate">
+            <column name="SendDate" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="anticipateArriveDate">
+            <column name="AnticipateArriveDate" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="userId">
+            <column name="UserID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="sendPlace">
+            <column name="SendPlace" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="inputUserId">
+            <column name="InputUserID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="inputDate">
+            <column name="InputDate" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="modifyUserId">
+            <column name="ModifyUserID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="modifyDate">
+            <column name="ModifyDate" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="isDel">
+            <column name="IsDel" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="note">
+            <column name="Note" sql-type="varchar(500)" length="500" not-null="true"/>
+        </property>
+        <property name="expressCode">
+            <column name="ExpressCode" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="editId">
+            <column name="EditID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="saleCode">
+            <column name="SaleCode" sql-type="varchar(500)" length="500" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

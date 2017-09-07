@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.newsun.web.entity.TaskOpDetailEntity" table="TaskOpDetail" schema="dygstudio">
+        <id name="id">
+            <column name="ID" sql-type="varchar(40)" length="40"/>
+        </id>
+        <property name="taskId">
+            <column name="TaskID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="userId">
+            <column name="UserID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="opDate">
+            <column name="OpDate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="opType">
+            <column name="OpType" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="contents">
+            <column name="Contents" sql-type="varchar(500)" length="500" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

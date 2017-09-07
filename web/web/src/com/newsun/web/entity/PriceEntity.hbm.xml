@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.newsun.web.entity.PriceEntity" table="Price" schema="dygstudio">
+        <id name="id">
+            <column name="ID" sql-type="varchar(40)" length="40"/>
+        </id>
+        <property name="priceType">
+            <column name="PriceType" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="productId">
+            <column name="ProductID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="model">
+            <column name="Model" sql-type="varchar(300)" length="300" not-null="true"/>
+        </property>
+        <property name="price">
+            <column name="Price" sql-type="float" precision="-1" not-null="true"/>
+        </property>
+        <property name="modifyPrice">
+            <column name="ModifyPrice" sql-type="float" precision="-1" not-null="true"/>
+        </property>
+        <property name="masterUnit">
+            <column name="MasterUnit" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="lastModifyDate">
+            <column name="LastModifyDate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="approveUserId">
+            <column name="ApproveUserID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="approveDate">
+            <column name="ApproveDate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="note">
+            <column name="Note" sql-type="varchar(500)" length="500" not-null="true"/>
+        </property>
+        <property name="inputUserId">
+            <column name="InputUserID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="inputDate">
+            <column name="InputDate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="modifyUserId">
+            <column name="ModifyUserID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="modifyDate">
+            <column name="ModifyDate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="state">
+            <column name="State" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="isDel">
+            <column name="IsDel" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="approveState">
+            <column name="ApproveState" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

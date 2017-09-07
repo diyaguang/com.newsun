@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.newsun.web.entity.StorageAccountEntity" table="StorageAccount" schema="dygstudio">
+        <id name="id">
+            <column name="ID" sql-type="varchar(40)" length="40"/>
+        </id>
+        <property name="depotId">
+            <column name="DepotID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="productId">
+            <column name="ProductID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="billId">
+            <column name="BillID" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="userId">
+            <column name="UserID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="amount">
+            <column name="Amount" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
+        </property>
+        <property name="money">
+            <column name="Money" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
+        </property>
+        <property name="opType">
+            <column name="OpType" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="opSource">
+            <column name="OpSource" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="inputUserId">
+            <column name="InputUserID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="inputDate">
+            <column name="InputDate" sql-type="date" not-null="true"/>
+        </property>
+        <property name="isUsed">
+            <column name="IsUsed" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="isDel">
+            <column name="IsDel" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="uniqueId">
+            <column name="UniqueID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

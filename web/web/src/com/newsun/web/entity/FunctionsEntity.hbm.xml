@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.newsun.web.entity.FunctionsEntity" table="Functions" schema="dygstudio">
+        <id name="id">
+            <column name="ID" sql-type="varchar(40)" length="40"/>
+        </id>
+        <property name="parentId">
+            <column name="ParentID" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="funcName">
+            <column name="FuncName" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="funcCode">
+            <column name="FuncCode" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="state">
+            <column name="State" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="level">
+            <column name="Level" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="urlPath">
+            <column name="UrlPath" sql-type="varchar(500)" length="500" not-null="true"/>
+        </property>
+        <property name="sort">
+            <column name="Sort" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="imagePath">
+            <column name="ImagePath" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="iconName">
+            <column name="IconName" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
