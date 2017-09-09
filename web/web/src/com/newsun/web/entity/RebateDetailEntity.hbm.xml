@@ -5,9 +5,9 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.RebateDetailEntity" table="RebateDetail" schema="dygstudio">
-        <property name="id">
+        <id name="id">
             <column name="ID" sql-type="varchar(40)" length="40"/>
-        </property>
+        </id>
         <property name="rebateId">
             <column name="RebateID" sql-type="varchar(40)" length="40" not-null="true"/>
         </property>

@@ -1,9 +1,6 @@
 package com.newsun.web.entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,7 +15,7 @@ public class RebateDetailEntity {
     private String rebateId;
     private String balanceId;
 
-    @Basic
+    @Id
     @Column(name = "ID", nullable = false, length = 40)
     public String getId() {
         return id;

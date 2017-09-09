@@ -33,7 +33,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/web/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/web/src/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/web/WEB-INF/templates/media" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/web/media" type="java-resource" />
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -48,6 +48,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="Hibernate" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.0.M26" level="application_server_libraries" />
+    <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.0.M22" level="application_server_libraries" />
   </component>
 </module>

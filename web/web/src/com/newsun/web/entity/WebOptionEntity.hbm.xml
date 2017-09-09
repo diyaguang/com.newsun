@@ -5,9 +5,9 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.WebOptionEntity" table="WebOption" schema="dygstudio">
-        <property name="id">
+        <id name="id">
             <column name="ID" sql-type="varchar(40)" length="40"/>
-        </property>
+        </id>
         <property name="setKey">
             <column name="SetKey" sql-type="varchar(50)" length="50" not-null="true"/>
         </property>
