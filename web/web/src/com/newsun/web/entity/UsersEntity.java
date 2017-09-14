@@ -3,12 +3,6 @@ package com.newsun.web.entity;
 import javax.persistence.*;
 import java.sql.Date;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:23 PM
- */
 @Entity
 @Table(name = "USERS", schema = "dygstudio", catalog = "")
 public class UsersEntity {
@@ -40,9 +34,11 @@ public class UsersEntity {
     private Integer isClient;
     private String loginName;
     private Integer isSuper;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -52,7 +48,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 100)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -62,7 +58,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "UserName", nullable = true, length = 100)
+    @Column(name = "UserName")
     public String getUserName() {
         return userName;
     }
@@ -72,7 +68,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "DeptID", nullable = true)
+    @Column(name = "DeptID")
     public Integer getDeptId() {
         return deptId;
     }
@@ -82,7 +78,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "Password", nullable = true, length = 50)
+    @Column(name = "Password")
     public String getPassword() {
         return password;
     }
@@ -92,7 +88,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "State", nullable = true)
+    @Column(name = "State")
     public Integer getState() {
         return state;
     }
@@ -102,7 +98,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "Sort", nullable = true)
+    @Column(name = "Sort")
     public Integer getSort() {
         return sort;
     }
@@ -112,7 +108,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "Headship", nullable = true, length = 100)
+    @Column(name = "Headship")
     public String getHeadship() {
         return headship;
     }
@@ -122,7 +118,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "Sex", nullable = true)
+    @Column(name = "Sex")
     public Integer getSex() {
         return sex;
     }
@@ -132,7 +128,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "Birthday", nullable = true)
+    @Column(name = "Birthday")
     public Date getBirthday() {
         return birthday;
     }
@@ -142,7 +138,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "JoinDate", nullable = true)
+    @Column(name = "JoinDate")
     public Date getJoinDate() {
         return joinDate;
     }
@@ -152,7 +148,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "CardID", nullable = true, length = 50)
+    @Column(name = "CardID")
     public String getCardId() {
         return cardId;
     }
@@ -162,7 +158,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "Attribute", nullable = true, length = 50)
+    @Column(name = "Attribute")
     public String getAttribute() {
         return attribute;
     }
@@ -172,7 +168,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "Phone", nullable = true, length = 50)
+    @Column(name = "Phone")
     public String getPhone() {
         return phone;
     }
@@ -182,7 +178,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "Mobile", nullable = true, length = 50)
+    @Column(name = "Mobile")
     public String getMobile() {
         return mobile;
     }
@@ -192,7 +188,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "Email", nullable = true, length = 50)
+    @Column(name = "Email")
     public String getEmail() {
         return email;
     }
@@ -202,7 +198,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "Address", nullable = true, length = 500)
+    @Column(name = "Address")
     public String getAddress() {
         return address;
     }
@@ -212,7 +208,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 1000)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
@@ -222,7 +218,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "InputUserID", nullable = true, length = 40)
+    @Column(name = "InputUserID")
     public String getInputUserId() {
         return inputUserId;
     }
@@ -232,7 +228,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "InputDate", nullable = true)
+    @Column(name = "InputDate")
     public Date getInputDate() {
         return inputDate;
     }
@@ -242,7 +238,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "ModifyUserID", nullable = true, length = 40)
+    @Column(name = "ModifyUserID")
     public String getModifyUserId() {
         return modifyUserId;
     }
@@ -252,7 +248,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "ModifyDate", nullable = true)
+    @Column(name = "ModifyDate")
     public Date getModifyDate() {
         return modifyDate;
     }
@@ -262,7 +258,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "Market", nullable = true)
+    @Column(name = "Market")
     public Integer getMarket() {
         return market;
     }
@@ -272,7 +268,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
@@ -282,7 +278,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "ClientID", nullable = true, length = 40)
+    @Column(name = "ClientID")
     public String getClientId() {
         return clientId;
     }
@@ -292,7 +288,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "IsClient", nullable = true)
+    @Column(name = "IsClient")
     public Integer getIsClient() {
         return isClient;
     }
@@ -302,7 +298,7 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "LoginName", nullable = true, length = 50)
+    @Column(name = "LoginName")
     public String getLoginName() {
         return loginName;
     }
@@ -312,13 +308,33 @@ public class UsersEntity {
     }
 
     @Basic
-    @Column(name = "IsSuper", nullable = true)
+    @Column(name = "IsSuper")
     public Integer getIsSuper() {
         return isSuper;
     }
 
     public void setIsSuper(Integer isSuper) {
         this.isSuper = isSuper;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -356,6 +372,8 @@ public class UsersEntity {
         if (isClient != null ? !isClient.equals(that.isClient) : that.isClient != null) return false;
         if (loginName != null ? !loginName.equals(that.loginName) : that.loginName != null) return false;
         if (isSuper != null ? !isSuper.equals(that.isSuper) : that.isSuper != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -390,6 +408,8 @@ public class UsersEntity {
         result = 31 * result + (isClient != null ? isClient.hashCode() : 0);
         result = 31 * result + (loginName != null ? loginName.hashCode() : 0);
         result = 31 * result + (isSuper != null ? isSuper.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

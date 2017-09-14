@@ -3,12 +3,6 @@ package com.newsun.web.entity;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:22 PM
- */
 @Entity
 @Table(name = "SaleDetail", schema = "dygstudio", catalog = "")
 public class SaleDetailEntity {
@@ -27,9 +21,11 @@ public class SaleDetailEntity {
     private String priceTypeName;
     private BigDecimal bzPrice;
     private BigDecimal bzDiscount;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -39,7 +35,7 @@ public class SaleDetailEntity {
     }
 
     @Basic
-    @Column(name = "SaleID", nullable = true, length = 40)
+    @Column(name = "SaleID")
     public String getSaleId() {
         return saleId;
     }
@@ -49,7 +45,7 @@ public class SaleDetailEntity {
     }
 
     @Basic
-    @Column(name = "IsLargess", nullable = true)
+    @Column(name = "IsLargess")
     public Integer getIsLargess() {
         return isLargess;
     }
@@ -59,7 +55,7 @@ public class SaleDetailEntity {
     }
 
     @Basic
-    @Column(name = "ProductID", nullable = true, length = 40)
+    @Column(name = "ProductID")
     public String getProductId() {
         return productId;
     }
@@ -69,7 +65,7 @@ public class SaleDetailEntity {
     }
 
     @Basic
-    @Column(name = "Price", nullable = true, precision = 2)
+    @Column(name = "Price")
     public BigDecimal getPrice() {
         return price;
     }
@@ -79,7 +75,7 @@ public class SaleDetailEntity {
     }
 
     @Basic
-    @Column(name = "Money", nullable = true, precision = 2)
+    @Column(name = "Money")
     public BigDecimal getMoney() {
         return money;
     }
@@ -89,7 +85,7 @@ public class SaleDetailEntity {
     }
 
     @Basic
-    @Column(name = "Amount", nullable = true, precision = 2)
+    @Column(name = "Amount")
     public BigDecimal getAmount() {
         return amount;
     }
@@ -99,7 +95,7 @@ public class SaleDetailEntity {
     }
 
     @Basic
-    @Column(name = "RealPrice", nullable = true, precision = 2)
+    @Column(name = "RealPrice")
     public BigDecimal getRealPrice() {
         return realPrice;
     }
@@ -109,7 +105,7 @@ public class SaleDetailEntity {
     }
 
     @Basic
-    @Column(name = "RealMoney", nullable = true, precision = 2)
+    @Column(name = "RealMoney")
     public BigDecimal getRealMoney() {
         return realMoney;
     }
@@ -119,7 +115,7 @@ public class SaleDetailEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 500)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
@@ -129,7 +125,7 @@ public class SaleDetailEntity {
     }
 
     @Basic
-    @Column(name = "Discount", nullable = true, precision = 2)
+    @Column(name = "Discount")
     public BigDecimal getDiscount() {
         return discount;
     }
@@ -139,7 +135,7 @@ public class SaleDetailEntity {
     }
 
     @Basic
-    @Column(name = "DepotCount", nullable = true, precision = 2)
+    @Column(name = "DepotCount")
     public BigDecimal getDepotCount() {
         return depotCount;
     }
@@ -149,7 +145,7 @@ public class SaleDetailEntity {
     }
 
     @Basic
-    @Column(name = "PriceTypeName", nullable = true, length = 50)
+    @Column(name = "PriceTypeName")
     public String getPriceTypeName() {
         return priceTypeName;
     }
@@ -159,7 +155,7 @@ public class SaleDetailEntity {
     }
 
     @Basic
-    @Column(name = "BzPrice", nullable = true, precision = 2)
+    @Column(name = "BzPrice")
     public BigDecimal getBzPrice() {
         return bzPrice;
     }
@@ -169,13 +165,33 @@ public class SaleDetailEntity {
     }
 
     @Basic
-    @Column(name = "BzDiscount", nullable = true, precision = 2)
+    @Column(name = "BzDiscount")
     public BigDecimal getBzDiscount() {
         return bzDiscount;
     }
 
     public void setBzDiscount(BigDecimal bzDiscount) {
         this.bzDiscount = bzDiscount;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -201,6 +217,8 @@ public class SaleDetailEntity {
             return false;
         if (bzPrice != null ? !bzPrice.equals(that.bzPrice) : that.bzPrice != null) return false;
         if (bzDiscount != null ? !bzDiscount.equals(that.bzDiscount) : that.bzDiscount != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -222,6 +240,8 @@ public class SaleDetailEntity {
         result = 31 * result + (priceTypeName != null ? priceTypeName.hashCode() : 0);
         result = 31 * result + (bzPrice != null ? bzPrice.hashCode() : 0);
         result = 31 * result + (bzDiscount != null ? bzDiscount.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

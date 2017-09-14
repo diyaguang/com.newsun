@@ -3,12 +3,6 @@ package com.newsun.web.entity;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:21 PM
- */
 @Entity
 @Table(name = "EmailAttachment", schema = "dygstudio", catalog = "")
 public class EmailAttachmentEntity {
@@ -17,9 +11,11 @@ public class EmailAttachmentEntity {
     private String name;
     private String path;
     private Timestamp upLoadDate;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -29,7 +25,7 @@ public class EmailAttachmentEntity {
     }
 
     @Basic
-    @Column(name = "EmailID", nullable = true, length = 40)
+    @Column(name = "EmailID")
     public String getEmailId() {
         return emailId;
     }
@@ -39,7 +35,7 @@ public class EmailAttachmentEntity {
     }
 
     @Basic
-    @Column(name = "Name", nullable = true, length = 200)
+    @Column(name = "Name")
     public String getName() {
         return name;
     }
@@ -49,7 +45,7 @@ public class EmailAttachmentEntity {
     }
 
     @Basic
-    @Column(name = "Path", nullable = true, length = 500)
+    @Column(name = "Path")
     public String getPath() {
         return path;
     }
@@ -59,13 +55,33 @@ public class EmailAttachmentEntity {
     }
 
     @Basic
-    @Column(name = "UpLoadDate", nullable = true)
+    @Column(name = "UpLoadDate")
     public Timestamp getUpLoadDate() {
         return upLoadDate;
     }
 
     public void setUpLoadDate(Timestamp upLoadDate) {
         this.upLoadDate = upLoadDate;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -80,6 +96,8 @@ public class EmailAttachmentEntity {
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
         if (path != null ? !path.equals(that.path) : that.path != null) return false;
         if (upLoadDate != null ? !upLoadDate.equals(that.upLoadDate) : that.upLoadDate != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -91,6 +109,8 @@ public class EmailAttachmentEntity {
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (path != null ? path.hashCode() : 0);
         result = 31 * result + (upLoadDate != null ? upLoadDate.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

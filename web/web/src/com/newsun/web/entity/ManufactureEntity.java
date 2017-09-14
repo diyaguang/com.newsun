@@ -4,12 +4,6 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:22 PM
- */
 @Entity
 @Table(name = "Manufacture", schema = "dygstudio", catalog = "")
 public class ManufactureEntity {
@@ -32,9 +26,11 @@ public class ManufactureEntity {
     private Integer state;
     private String note;
     private String manufacturePh;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -44,7 +40,7 @@ public class ManufactureEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 100)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -54,7 +50,7 @@ public class ManufactureEntity {
     }
 
     @Basic
-    @Column(name = "CreateDate", nullable = true)
+    @Column(name = "CreateDate")
     public Date getCreateDate() {
         return createDate;
     }
@@ -64,7 +60,7 @@ public class ManufactureEntity {
     }
 
     @Basic
-    @Column(name = "BomID", nullable = true, length = 40)
+    @Column(name = "BomID")
     public String getBomId() {
         return bomId;
     }
@@ -74,7 +70,7 @@ public class ManufactureEntity {
     }
 
     @Basic
-    @Column(name = "UserID", nullable = true, length = 40)
+    @Column(name = "UserID")
     public String getUserId() {
         return userId;
     }
@@ -84,7 +80,7 @@ public class ManufactureEntity {
     }
 
     @Basic
-    @Column(name = "OutDepotID", nullable = true, length = 40)
+    @Column(name = "OutDepotID")
     public String getOutDepotId() {
         return outDepotId;
     }
@@ -94,7 +90,7 @@ public class ManufactureEntity {
     }
 
     @Basic
-    @Column(name = "InDepotID", nullable = true, length = 40)
+    @Column(name = "InDepotID")
     public String getInDepotId() {
         return inDepotId;
     }
@@ -104,7 +100,7 @@ public class ManufactureEntity {
     }
 
     @Basic
-    @Column(name = "Amount", nullable = true, precision = 2)
+    @Column(name = "Amount")
     public BigDecimal getAmount() {
         return amount;
     }
@@ -114,7 +110,7 @@ public class ManufactureEntity {
     }
 
     @Basic
-    @Column(name = "Price", nullable = true, precision = 2)
+    @Column(name = "Price")
     public BigDecimal getPrice() {
         return price;
     }
@@ -124,7 +120,7 @@ public class ManufactureEntity {
     }
 
     @Basic
-    @Column(name = "Money", nullable = true, precision = 2)
+    @Column(name = "Money")
     public BigDecimal getMoney() {
         return money;
     }
@@ -134,7 +130,7 @@ public class ManufactureEntity {
     }
 
     @Basic
-    @Column(name = "InputUserID", nullable = true, length = 40)
+    @Column(name = "InputUserID")
     public String getInputUserId() {
         return inputUserId;
     }
@@ -144,7 +140,7 @@ public class ManufactureEntity {
     }
 
     @Basic
-    @Column(name = "InputDate", nullable = true)
+    @Column(name = "InputDate")
     public Date getInputDate() {
         return inputDate;
     }
@@ -154,7 +150,7 @@ public class ManufactureEntity {
     }
 
     @Basic
-    @Column(name = "ModifyUserID", nullable = true, length = 40)
+    @Column(name = "ModifyUserID")
     public String getModifyUserId() {
         return modifyUserId;
     }
@@ -164,7 +160,7 @@ public class ManufactureEntity {
     }
 
     @Basic
-    @Column(name = "ModifyDate", nullable = true)
+    @Column(name = "ModifyDate")
     public Date getModifyDate() {
         return modifyDate;
     }
@@ -174,7 +170,7 @@ public class ManufactureEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
@@ -184,7 +180,7 @@ public class ManufactureEntity {
     }
 
     @Basic
-    @Column(name = "ApproveState", nullable = true)
+    @Column(name = "ApproveState")
     public Integer getApproveState() {
         return approveState;
     }
@@ -194,7 +190,7 @@ public class ManufactureEntity {
     }
 
     @Basic
-    @Column(name = "State", nullable = true)
+    @Column(name = "State")
     public Integer getState() {
         return state;
     }
@@ -204,7 +200,7 @@ public class ManufactureEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 500)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
@@ -214,13 +210,33 @@ public class ManufactureEntity {
     }
 
     @Basic
-    @Column(name = "ManufacturePH", nullable = true, length = 50)
+    @Column(name = "ManufacturePH")
     public String getManufacturePh() {
         return manufacturePh;
     }
 
     public void setManufacturePh(String manufacturePh) {
         this.manufacturePh = manufacturePh;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -250,6 +266,8 @@ public class ManufactureEntity {
         if (note != null ? !note.equals(that.note) : that.note != null) return false;
         if (manufacturePh != null ? !manufacturePh.equals(that.manufacturePh) : that.manufacturePh != null)
             return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -275,6 +293,8 @@ public class ManufactureEntity {
         result = 31 * result + (state != null ? state.hashCode() : 0);
         result = 31 * result + (note != null ? note.hashCode() : 0);
         result = 31 * result + (manufacturePh != null ? manufacturePh.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

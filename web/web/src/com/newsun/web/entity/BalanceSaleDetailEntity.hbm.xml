@@ -5,17 +5,11 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.BalanceSaleDetailEntity" table="BalanceSaleDetail" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="balanceId">
-            <column name="BalanceID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="accountBillId">
-            <column name="AccountBillID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="balanceMoney">
-            <column name="BalanceMoney" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="balanceId" column="BalanceID"/>
+        <property name="accountBillId" column="AccountBillID"/>
+        <property name="balanceMoney" column="BalanceMoney"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.newsun.web.entity.TodoDataLinkEntity" table="Todo_Data_Link" schema="dygstudio">
+        <id name="id" column="ID"/>
+        <property name="todoId" column="TodoID"/>
+        <property name="dataId" column="DataID"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
+    </class>
+</hibernate-mapping>

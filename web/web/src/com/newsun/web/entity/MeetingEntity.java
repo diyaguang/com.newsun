@@ -3,12 +3,6 @@ package com.newsun.web.entity;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:22 PM
- */
 @Entity
 @Table(name = "Meeting", schema = "dygstudio", catalog = "")
 public class MeetingEntity {
@@ -25,9 +19,11 @@ public class MeetingEntity {
     private Timestamp approveDate;
     private String editId;
     private Integer isDel;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -37,7 +33,7 @@ public class MeetingEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 50)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -47,7 +43,7 @@ public class MeetingEntity {
     }
 
     @Basic
-    @Column(name = "Name", nullable = true, length = 200)
+    @Column(name = "Name")
     public String getName() {
         return name;
     }
@@ -57,7 +53,7 @@ public class MeetingEntity {
     }
 
     @Basic
-    @Column(name = "MeetingRoomID", nullable = true, length = 40)
+    @Column(name = "MeetingRoomID")
     public String getMeetingRoomId() {
         return meetingRoomId;
     }
@@ -67,7 +63,7 @@ public class MeetingEntity {
     }
 
     @Basic
-    @Column(name = "StartDate", nullable = true)
+    @Column(name = "StartDate")
     public Timestamp getStartDate() {
         return startDate;
     }
@@ -77,7 +73,7 @@ public class MeetingEntity {
     }
 
     @Basic
-    @Column(name = "EndDate", nullable = true)
+    @Column(name = "EndDate")
     public Timestamp getEndDate() {
         return endDate;
     }
@@ -87,7 +83,7 @@ public class MeetingEntity {
     }
 
     @Basic
-    @Column(name = "ApplyUserID", nullable = true, length = 40)
+    @Column(name = "ApplyUserID")
     public String getApplyUserId() {
         return applyUserId;
     }
@@ -97,7 +93,7 @@ public class MeetingEntity {
     }
 
     @Basic
-    @Column(name = "ApplyDate", nullable = true)
+    @Column(name = "ApplyDate")
     public Timestamp getApplyDate() {
         return applyDate;
     }
@@ -107,7 +103,7 @@ public class MeetingEntity {
     }
 
     @Basic
-    @Column(name = "ApproveState", nullable = true)
+    @Column(name = "ApproveState")
     public Integer getApproveState() {
         return approveState;
     }
@@ -117,7 +113,7 @@ public class MeetingEntity {
     }
 
     @Basic
-    @Column(name = "ApproveUserID", nullable = true, length = 40)
+    @Column(name = "ApproveUserID")
     public String getApproveUserId() {
         return approveUserId;
     }
@@ -127,7 +123,7 @@ public class MeetingEntity {
     }
 
     @Basic
-    @Column(name = "ApproveDate", nullable = true)
+    @Column(name = "ApproveDate")
     public Timestamp getApproveDate() {
         return approveDate;
     }
@@ -137,7 +133,7 @@ public class MeetingEntity {
     }
 
     @Basic
-    @Column(name = "EditID", nullable = true, length = 40)
+    @Column(name = "EditID")
     public String getEditId() {
         return editId;
     }
@@ -147,13 +143,33 @@ public class MeetingEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
 
     public void setIsDel(Integer isDel) {
         this.isDel = isDel;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -178,6 +194,8 @@ public class MeetingEntity {
         if (approveDate != null ? !approveDate.equals(that.approveDate) : that.approveDate != null) return false;
         if (editId != null ? !editId.equals(that.editId) : that.editId != null) return false;
         if (isDel != null ? !isDel.equals(that.isDel) : that.isDel != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -197,6 +215,8 @@ public class MeetingEntity {
         result = 31 * result + (approveDate != null ? approveDate.hashCode() : 0);
         result = 31 * result + (editId != null ? editId.hashCode() : 0);
         result = 31 * result + (isDel != null ? isDel.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

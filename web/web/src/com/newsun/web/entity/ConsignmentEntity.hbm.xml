@@ -5,56 +5,24 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.ConsignmentEntity" table="Consignment" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="code">
-            <column name="Code" sql-type="varchar(100)" length="100" not-null="true"/>
-        </property>
-        <property name="expressId">
-            <column name="ExpressID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="saleId">
-            <column name="SaleID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="sendDate">
-            <column name="SendDate" sql-type="datetime" not-null="true"/>
-        </property>
-        <property name="anticipateArriveDate">
-            <column name="AnticipateArriveDate" sql-type="datetime" not-null="true"/>
-        </property>
-        <property name="userId">
-            <column name="UserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="sendPlace">
-            <column name="SendPlace" sql-type="varchar(200)" length="200" not-null="true"/>
-        </property>
-        <property name="inputUserId">
-            <column name="InputUserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="inputDate">
-            <column name="InputDate" sql-type="datetime" not-null="true"/>
-        </property>
-        <property name="modifyUserId">
-            <column name="ModifyUserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="modifyDate">
-            <column name="ModifyDate" sql-type="datetime" not-null="true"/>
-        </property>
-        <property name="isDel">
-            <column name="IsDel" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="note">
-            <column name="Note" sql-type="varchar(500)" length="500" not-null="true"/>
-        </property>
-        <property name="expressCode">
-            <column name="ExpressCode" sql-type="varchar(100)" length="100" not-null="true"/>
-        </property>
-        <property name="editId">
-            <column name="EditID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="saleCode">
-            <column name="SaleCode" sql-type="varchar(500)" length="500" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="code" column="Code"/>
+        <property name="expressId" column="ExpressID"/>
+        <property name="saleId" column="SaleID"/>
+        <property name="sendDate" column="SendDate"/>
+        <property name="anticipateArriveDate" column="AnticipateArriveDate"/>
+        <property name="userId" column="UserID"/>
+        <property name="sendPlace" column="SendPlace"/>
+        <property name="inputUserId" column="InputUserID"/>
+        <property name="inputDate" column="InputDate"/>
+        <property name="modifyUserId" column="ModifyUserID"/>
+        <property name="modifyDate" column="ModifyDate"/>
+        <property name="isDel" column="IsDel"/>
+        <property name="note" column="Note"/>
+        <property name="expressCode" column="ExpressCode"/>
+        <property name="editId" column="EditID"/>
+        <property name="saleCode" column="SaleCode"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

@@ -3,12 +3,6 @@ package com.newsun.web.entity;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:22 PM
- */
 @Entity
 @Table(name = "LendDetail", schema = "dygstudio", catalog = "")
 public class LendDetailEntity {
@@ -25,9 +19,11 @@ public class LendDetailEntity {
     private BigDecimal discount;
     private Integer depotCount;
     private String priceTypeName;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -37,7 +33,7 @@ public class LendDetailEntity {
     }
 
     @Basic
-    @Column(name = "LendID", nullable = true, length = 40)
+    @Column(name = "LendID")
     public String getLendId() {
         return lendId;
     }
@@ -47,7 +43,7 @@ public class LendDetailEntity {
     }
 
     @Basic
-    @Column(name = "IsLargess", nullable = true)
+    @Column(name = "IsLargess")
     public Integer getIsLargess() {
         return isLargess;
     }
@@ -57,7 +53,7 @@ public class LendDetailEntity {
     }
 
     @Basic
-    @Column(name = "ProductID", nullable = true, length = 40)
+    @Column(name = "ProductID")
     public String getProductId() {
         return productId;
     }
@@ -67,7 +63,7 @@ public class LendDetailEntity {
     }
 
     @Basic
-    @Column(name = "Price", nullable = true, precision = 2)
+    @Column(name = "Price")
     public BigDecimal getPrice() {
         return price;
     }
@@ -77,7 +73,7 @@ public class LendDetailEntity {
     }
 
     @Basic
-    @Column(name = "Money", nullable = true, precision = 2)
+    @Column(name = "Money")
     public BigDecimal getMoney() {
         return money;
     }
@@ -87,7 +83,7 @@ public class LendDetailEntity {
     }
 
     @Basic
-    @Column(name = "Amount", nullable = true, precision = 2)
+    @Column(name = "Amount")
     public BigDecimal getAmount() {
         return amount;
     }
@@ -97,7 +93,7 @@ public class LendDetailEntity {
     }
 
     @Basic
-    @Column(name = "RealPrice", nullable = true, precision = 2)
+    @Column(name = "RealPrice")
     public BigDecimal getRealPrice() {
         return realPrice;
     }
@@ -107,7 +103,7 @@ public class LendDetailEntity {
     }
 
     @Basic
-    @Column(name = "RealMoney", nullable = true, precision = 2)
+    @Column(name = "RealMoney")
     public BigDecimal getRealMoney() {
         return realMoney;
     }
@@ -117,7 +113,7 @@ public class LendDetailEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 500)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
@@ -127,7 +123,7 @@ public class LendDetailEntity {
     }
 
     @Basic
-    @Column(name = "Discount", nullable = true, precision = 2)
+    @Column(name = "Discount")
     public BigDecimal getDiscount() {
         return discount;
     }
@@ -137,7 +133,7 @@ public class LendDetailEntity {
     }
 
     @Basic
-    @Column(name = "DepotCount", nullable = true)
+    @Column(name = "DepotCount")
     public Integer getDepotCount() {
         return depotCount;
     }
@@ -147,13 +143,33 @@ public class LendDetailEntity {
     }
 
     @Basic
-    @Column(name = "PriceTypeName", nullable = true, length = 50)
+    @Column(name = "PriceTypeName")
     public String getPriceTypeName() {
         return priceTypeName;
     }
 
     public void setPriceTypeName(String priceTypeName) {
         this.priceTypeName = priceTypeName;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -177,6 +193,8 @@ public class LendDetailEntity {
         if (depotCount != null ? !depotCount.equals(that.depotCount) : that.depotCount != null) return false;
         if (priceTypeName != null ? !priceTypeName.equals(that.priceTypeName) : that.priceTypeName != null)
             return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -196,6 +214,8 @@ public class LendDetailEntity {
         result = 31 * result + (discount != null ? discount.hashCode() : 0);
         result = 31 * result + (depotCount != null ? depotCount.hashCode() : 0);
         result = 31 * result + (priceTypeName != null ? priceTypeName.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

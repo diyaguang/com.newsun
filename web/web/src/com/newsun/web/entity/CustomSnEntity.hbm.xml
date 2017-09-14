@@ -5,17 +5,11 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.CustomSnEntity" table="CustomSN" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="number">
-            <column name="Number" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="date">
-            <column name="Date" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="type">
-            <column name="Type" sql-type="int(11)" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="number" column="Number"/>
+        <property name="date" column="Date"/>
+        <property name="type" column="Type"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

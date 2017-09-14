@@ -5,53 +5,23 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.ExpressEntity" table="Express" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="code">
-            <column name="Code" sql-type="varchar(100)" length="100" not-null="true"/>
-        </property>
-        <property name="name">
-            <column name="Name" sql-type="varchar(200)" length="200" not-null="true"/>
-        </property>
-        <property name="phone">
-            <column name="Phone" sql-type="varchar(50)" length="50" not-null="true"/>
-        </property>
-        <property name="userName">
-            <column name="UserName" sql-type="varchar(50)" length="50" not-null="true"/>
-        </property>
-        <property name="userPhone">
-            <column name="UserPhone" sql-type="varchar(50)" length="50" not-null="true"/>
-        </property>
-        <property name="takeType">
-            <column name="TakeType" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="takePlace">
-            <column name="TakePlace" sql-type="varchar(200)" length="200" not-null="true"/>
-        </property>
-        <property name="inputUserId">
-            <column name="InputUserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="inputDate">
-            <column name="InputDate" sql-type="date" not-null="true"/>
-        </property>
-        <property name="modifyUserId">
-            <column name="ModifyUserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="modifyDate">
-            <column name="ModifyDate" sql-type="date" not-null="true"/>
-        </property>
-        <property name="isDel">
-            <column name="IsDel" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="note">
-            <column name="Note" sql-type="varchar(500)" length="500" not-null="true"/>
-        </property>
-        <property name="systemPath">
-            <column name="SystemPath" sql-type="varchar(1000)" length="1000" not-null="true"/>
-        </property>
-        <property name="queryUrl">
-            <column name="QueryUrl" sql-type="varchar(1000)" length="1000" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="code" column="Code"/>
+        <property name="name" column="Name"/>
+        <property name="phone" column="Phone"/>
+        <property name="userName" column="UserName"/>
+        <property name="userPhone" column="UserPhone"/>
+        <property name="takeType" column="TakeType"/>
+        <property name="takePlace" column="TakePlace"/>
+        <property name="inputUserId" column="InputUserID"/>
+        <property name="inputDate" column="InputDate"/>
+        <property name="modifyUserId" column="ModifyUserID"/>
+        <property name="modifyDate" column="ModifyDate"/>
+        <property name="isDel" column="IsDel"/>
+        <property name="note" column="Note"/>
+        <property name="systemPath" column="SystemPath"/>
+        <property name="queryUrl" column="QueryUrl"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

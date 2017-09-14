@@ -4,12 +4,6 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:21 PM
- */
 @Entity
 @Table(name = "Bom", schema = "dygstudio", catalog = "")
 public class BomEntity {
@@ -28,9 +22,11 @@ public class BomEntity {
     private BigDecimal price;
     private String editId;
     private Integer approveState;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -40,7 +36,7 @@ public class BomEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 100)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -50,7 +46,7 @@ public class BomEntity {
     }
 
     @Basic
-    @Column(name = "Name", nullable = true, length = 200)
+    @Column(name = "Name")
     public String getName() {
         return name;
     }
@@ -60,7 +56,7 @@ public class BomEntity {
     }
 
     @Basic
-    @Column(name = "ProductID", nullable = true, length = 40)
+    @Column(name = "ProductID")
     public String getProductId() {
         return productId;
     }
@@ -70,7 +66,7 @@ public class BomEntity {
     }
 
     @Basic
-    @Column(name = "Amount", nullable = true, precision = 0)
+    @Column(name = "Amount")
     public Integer getAmount() {
         return amount;
     }
@@ -80,7 +76,7 @@ public class BomEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 500)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
@@ -90,7 +86,7 @@ public class BomEntity {
     }
 
     @Basic
-    @Column(name = "State", nullable = true)
+    @Column(name = "State")
     public Integer getState() {
         return state;
     }
@@ -100,7 +96,7 @@ public class BomEntity {
     }
 
     @Basic
-    @Column(name = "InputUserID", nullable = true, length = 40)
+    @Column(name = "InputUserID")
     public String getInputUserId() {
         return inputUserId;
     }
@@ -110,7 +106,7 @@ public class BomEntity {
     }
 
     @Basic
-    @Column(name = "InputDate", nullable = true)
+    @Column(name = "InputDate")
     public Date getInputDate() {
         return inputDate;
     }
@@ -120,7 +116,7 @@ public class BomEntity {
     }
 
     @Basic
-    @Column(name = "ModfiyUserID", nullable = true, length = 40)
+    @Column(name = "ModfiyUserID")
     public String getModfiyUserId() {
         return modfiyUserId;
     }
@@ -130,7 +126,7 @@ public class BomEntity {
     }
 
     @Basic
-    @Column(name = "ModifyDate", nullable = true)
+    @Column(name = "ModifyDate")
     public Date getModifyDate() {
         return modifyDate;
     }
@@ -140,7 +136,7 @@ public class BomEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
@@ -150,7 +146,7 @@ public class BomEntity {
     }
 
     @Basic
-    @Column(name = "Price", nullable = true, precision = 2)
+    @Column(name = "Price")
     public BigDecimal getPrice() {
         return price;
     }
@@ -160,7 +156,7 @@ public class BomEntity {
     }
 
     @Basic
-    @Column(name = "EditID", nullable = true, length = 40)
+    @Column(name = "EditID")
     public String getEditId() {
         return editId;
     }
@@ -170,13 +166,33 @@ public class BomEntity {
     }
 
     @Basic
-    @Column(name = "ApproveState", nullable = true)
+    @Column(name = "ApproveState")
     public Integer getApproveState() {
         return approveState;
     }
 
     public void setApproveState(Integer approveState) {
         this.approveState = approveState;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -204,6 +220,8 @@ public class BomEntity {
         if (editId != null ? !editId.equals(bomEntity.editId) : bomEntity.editId != null) return false;
         if (approveState != null ? !approveState.equals(bomEntity.approveState) : bomEntity.approveState != null)
             return false;
+        if (bookId != null ? !bookId.equals(bomEntity.bookId) : bomEntity.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(bomEntity.companyId) : bomEntity.companyId != null) return false;
 
         return true;
     }
@@ -225,6 +243,8 @@ public class BomEntity {
         result = 31 * result + (price != null ? price.hashCode() : 0);
         result = 31 * result + (editId != null ? editId.hashCode() : 0);
         result = 31 * result + (approveState != null ? approveState.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

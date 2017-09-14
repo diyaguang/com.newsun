@@ -5,47 +5,21 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.DeptEntity" table="Dept" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="code">
-            <column name="Code" sql-type="varchar(50)" length="50" not-null="true"/>
-        </property>
-        <property name="parentId">
-            <column name="ParentID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="name">
-            <column name="Name" sql-type="varchar(100)" length="100" not-null="true"/>
-        </property>
-        <property name="state">
-            <column name="State" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="sort">
-            <column name="Sort" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="level">
-            <column name="Level" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="userId">
-            <column name="UserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="note">
-            <column name="Note" sql-type="varchar(500)" length="500" not-null="true"/>
-        </property>
-        <property name="inputUserId">
-            <column name="InputUserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="inputDate">
-            <column name="InputDate" sql-type="date" not-null="true"/>
-        </property>
-        <property name="modifyUserId">
-            <column name="ModifyUserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="modifyDate">
-            <column name="ModifyDate" sql-type="date" not-null="true"/>
-        </property>
-        <property name="isDel">
-            <column name="IsDel" sql-type="int(11)" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="code" column="Code"/>
+        <property name="parentId" column="ParentID"/>
+        <property name="name" column="Name"/>
+        <property name="state" column="State"/>
+        <property name="sort" column="Sort"/>
+        <property name="level" column="Level"/>
+        <property name="userId" column="UserID"/>
+        <property name="note" column="Note"/>
+        <property name="inputUserId" column="InputUserID"/>
+        <property name="inputDate" column="InputDate"/>
+        <property name="modifyUserId" column="ModifyUserID"/>
+        <property name="modifyDate" column="ModifyDate"/>
+        <property name="isDel" column="IsDel"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

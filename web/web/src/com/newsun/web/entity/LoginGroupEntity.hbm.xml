@@ -5,11 +5,9 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.LoginGroupEntity" table="LoginGroup" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="name">
-            <column name="Name" sql-type="varchar(50)" length="50" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="name" column="Name"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

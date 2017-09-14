@@ -4,12 +4,6 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:22 PM
- */
 @Entity
 @Table(name = "Product", schema = "dygstudio", catalog = "")
 public class ProductEntity {
@@ -38,9 +32,11 @@ public class ProductEntity {
     private String categoryOne;
     private String categoryTwo;
     private String depotId;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -50,7 +46,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "Name", nullable = true, length = 100)
+    @Column(name = "Name")
     public String getName() {
         return name;
     }
@@ -60,7 +56,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 100)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -70,7 +66,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "Model", nullable = true, length = 300)
+    @Column(name = "Model")
     public String getModel() {
         return model;
     }
@@ -80,7 +76,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "Area", nullable = true, length = 50)
+    @Column(name = "Area")
     public String getArea() {
         return area;
     }
@@ -90,7 +86,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "BarCode", nullable = true, length = 100)
+    @Column(name = "BarCode")
     public String getBarCode() {
         return barCode;
     }
@@ -100,7 +96,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "Duty", nullable = true, precision = 2)
+    @Column(name = "Duty")
     public BigDecimal getDuty() {
         return duty;
     }
@@ -110,7 +106,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "MasterUnit", nullable = true)
+    @Column(name = "MasterUnit")
     public Integer getMasterUnit() {
         return masterUnit;
     }
@@ -120,7 +116,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "AssistUnit", nullable = true)
+    @Column(name = "AssistUnit")
     public Integer getAssistUnit() {
         return assistUnit;
     }
@@ -130,7 +126,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "UnitChange", nullable = true, precision = 2)
+    @Column(name = "UnitChange")
     public BigDecimal getUnitChange() {
         return unitChange;
     }
@@ -140,7 +136,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "Type", nullable = true)
+    @Column(name = "Type")
     public Integer getType() {
         return type;
     }
@@ -150,7 +146,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "ProviderID", nullable = true, length = 40)
+    @Column(name = "ProviderID")
     public String getProviderId() {
         return providerId;
     }
@@ -160,7 +156,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "DepositPlace", nullable = true, length = 200)
+    @Column(name = "DepositPlace")
     public String getDepositPlace() {
         return depositPlace;
     }
@@ -170,7 +166,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 500)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
@@ -180,7 +176,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "InputUserID", nullable = true, length = 40)
+    @Column(name = "InputUserID")
     public String getInputUserId() {
         return inputUserId;
     }
@@ -190,7 +186,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "InputDate", nullable = true)
+    @Column(name = "InputDate")
     public Date getInputDate() {
         return inputDate;
     }
@@ -200,7 +196,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "ModifyUserID", nullable = true, length = 40)
+    @Column(name = "ModifyUserID")
     public String getModifyUserId() {
         return modifyUserId;
     }
@@ -210,7 +206,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "ModifyDate", nullable = true)
+    @Column(name = "ModifyDate")
     public Date getModifyDate() {
         return modifyDate;
     }
@@ -220,7 +216,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "State", nullable = true)
+    @Column(name = "State")
     public Integer getState() {
         return state;
     }
@@ -230,7 +226,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
@@ -240,7 +236,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "ImagePath", nullable = true, length = 300)
+    @Column(name = "ImagePath")
     public String getImagePath() {
         return imagePath;
     }
@@ -250,7 +246,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "ShortName", nullable = true, length = 50)
+    @Column(name = "ShortName")
     public String getShortName() {
         return shortName;
     }
@@ -260,7 +256,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "CategoryOne", nullable = true, length = 40)
+    @Column(name = "CategoryOne")
     public String getCategoryOne() {
         return categoryOne;
     }
@@ -270,7 +266,7 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "CategoryTwo", nullable = true, length = 40)
+    @Column(name = "CategoryTwo")
     public String getCategoryTwo() {
         return categoryTwo;
     }
@@ -280,13 +276,33 @@ public class ProductEntity {
     }
 
     @Basic
-    @Column(name = "DepotID", nullable = true, length = 40)
+    @Column(name = "DepotID")
     public String getDepotId() {
         return depotId;
     }
 
     public void setDepotId(String depotId) {
         this.depotId = depotId;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -321,6 +337,8 @@ public class ProductEntity {
         if (categoryOne != null ? !categoryOne.equals(that.categoryOne) : that.categoryOne != null) return false;
         if (categoryTwo != null ? !categoryTwo.equals(that.categoryTwo) : that.categoryTwo != null) return false;
         if (depotId != null ? !depotId.equals(that.depotId) : that.depotId != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -352,6 +370,8 @@ public class ProductEntity {
         result = 31 * result + (categoryOne != null ? categoryOne.hashCode() : 0);
         result = 31 * result + (categoryTwo != null ? categoryTwo.hashCode() : 0);
         result = 31 * result + (depotId != null ? depotId.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

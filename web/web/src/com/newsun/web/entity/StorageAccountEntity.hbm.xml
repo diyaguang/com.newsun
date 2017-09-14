@@ -5,47 +5,21 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.StorageAccountEntity" table="StorageAccount" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="depotId">
-            <column name="DepotID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="productId">
-            <column name="ProductID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="billId">
-            <column name="BillID" sql-type="varchar(200)" length="200" not-null="true"/>
-        </property>
-        <property name="userId">
-            <column name="UserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="amount">
-            <column name="Amount" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="money">
-            <column name="Money" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="opType">
-            <column name="OpType" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="opSource">
-            <column name="OpSource" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="inputUserId">
-            <column name="InputUserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="inputDate">
-            <column name="InputDate" sql-type="date" not-null="true"/>
-        </property>
-        <property name="isUsed">
-            <column name="IsUsed" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="isDel">
-            <column name="IsDel" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="uniqueId">
-            <column name="UniqueID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="depotId" column="DepotID"/>
+        <property name="productId" column="ProductID"/>
+        <property name="billId" column="BillID"/>
+        <property name="userId" column="UserID"/>
+        <property name="amount" column="Amount"/>
+        <property name="money" column="Money"/>
+        <property name="opType" column="OpType"/>
+        <property name="opSource" column="OpSource"/>
+        <property name="inputUserId" column="InputUserID"/>
+        <property name="inputDate" column="InputDate"/>
+        <property name="isUsed" column="IsUsed"/>
+        <property name="isDel" column="IsDel"/>
+        <property name="uniqueId" column="UniqueID"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

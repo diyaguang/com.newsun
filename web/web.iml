@@ -18,6 +18,7 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
+          <unit-entry name="a.xml" value="d28456d3-6730-4018-9bdf-3b758ea80495" />
           <unit-entry name="hibernate.cfg.xml" value="9f32d535-2e5c-4ca4-8bf2-f944d6e6f383" />
           <unit-entry name="sessionFactory" />
         </datasource-map>
@@ -48,6 +49,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="Hibernate" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.0.M22" level="application_server_libraries" />
+    <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.0.M26" level="application_server_libraries" />
   </component>
 </module>

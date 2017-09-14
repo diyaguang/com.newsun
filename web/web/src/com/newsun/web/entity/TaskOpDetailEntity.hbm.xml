@@ -5,23 +5,13 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.TaskOpDetailEntity" table="TaskOpDetail" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="taskId">
-            <column name="TaskID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="userId">
-            <column name="UserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="opDate">
-            <column name="OpDate" sql-type="date" not-null="true"/>
-        </property>
-        <property name="opType">
-            <column name="OpType" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="contents">
-            <column name="Contents" sql-type="varchar(500)" length="500" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="taskId" column="TaskID"/>
+        <property name="userId" column="UserID"/>
+        <property name="opDate" column="OpDate"/>
+        <property name="opType" column="OpType"/>
+        <property name="contents" column="Contents"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

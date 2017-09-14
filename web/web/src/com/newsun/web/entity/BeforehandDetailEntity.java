@@ -3,12 +3,6 @@ package com.newsun.web.entity;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:21 PM
- */
 @Entity
 @Table(name = "BeforehandDetail", schema = "dygstudio", catalog = "")
 public class BeforehandDetailEntity {
@@ -18,9 +12,11 @@ public class BeforehandDetailEntity {
     private BigDecimal money;
     private String billCode;
     private String note;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -30,7 +26,7 @@ public class BeforehandDetailEntity {
     }
 
     @Basic
-    @Column(name = "BeforehandID", nullable = true, length = 40)
+    @Column(name = "BeforehandID")
     public String getBeforehandId() {
         return beforehandId;
     }
@@ -40,7 +36,7 @@ public class BeforehandDetailEntity {
     }
 
     @Basic
-    @Column(name = "AccountID", nullable = true, length = 40)
+    @Column(name = "AccountID")
     public String getAccountId() {
         return accountId;
     }
@@ -50,7 +46,7 @@ public class BeforehandDetailEntity {
     }
 
     @Basic
-    @Column(name = "Money", nullable = true, precision = 2)
+    @Column(name = "Money")
     public BigDecimal getMoney() {
         return money;
     }
@@ -60,7 +56,7 @@ public class BeforehandDetailEntity {
     }
 
     @Basic
-    @Column(name = "BillCode", nullable = true, length = 100)
+    @Column(name = "BillCode")
     public String getBillCode() {
         return billCode;
     }
@@ -70,13 +66,33 @@ public class BeforehandDetailEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 500)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -92,6 +108,8 @@ public class BeforehandDetailEntity {
         if (money != null ? !money.equals(that.money) : that.money != null) return false;
         if (billCode != null ? !billCode.equals(that.billCode) : that.billCode != null) return false;
         if (note != null ? !note.equals(that.note) : that.note != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -104,6 +122,8 @@ public class BeforehandDetailEntity {
         result = 31 * result + (money != null ? money.hashCode() : 0);
         result = 31 * result + (billCode != null ? billCode.hashCode() : 0);
         result = 31 * result + (note != null ? note.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

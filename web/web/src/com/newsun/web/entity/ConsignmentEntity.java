@@ -3,12 +3,6 @@ package com.newsun.web.entity;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:21 PM
- */
 @Entity
 @Table(name = "Consignment", schema = "dygstudio", catalog = "")
 public class ConsignmentEntity {
@@ -29,9 +23,11 @@ public class ConsignmentEntity {
     private String expressCode;
     private String editId;
     private String saleCode;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -41,7 +37,7 @@ public class ConsignmentEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 100)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -51,7 +47,7 @@ public class ConsignmentEntity {
     }
 
     @Basic
-    @Column(name = "ExpressID", nullable = true, length = 40)
+    @Column(name = "ExpressID")
     public String getExpressId() {
         return expressId;
     }
@@ -61,7 +57,7 @@ public class ConsignmentEntity {
     }
 
     @Basic
-    @Column(name = "SaleID", nullable = true, length = 40)
+    @Column(name = "SaleID")
     public String getSaleId() {
         return saleId;
     }
@@ -71,7 +67,7 @@ public class ConsignmentEntity {
     }
 
     @Basic
-    @Column(name = "SendDate", nullable = true)
+    @Column(name = "SendDate")
     public Timestamp getSendDate() {
         return sendDate;
     }
@@ -81,7 +77,7 @@ public class ConsignmentEntity {
     }
 
     @Basic
-    @Column(name = "AnticipateArriveDate", nullable = true)
+    @Column(name = "AnticipateArriveDate")
     public Timestamp getAnticipateArriveDate() {
         return anticipateArriveDate;
     }
@@ -91,7 +87,7 @@ public class ConsignmentEntity {
     }
 
     @Basic
-    @Column(name = "UserID", nullable = true, length = 40)
+    @Column(name = "UserID")
     public String getUserId() {
         return userId;
     }
@@ -101,7 +97,7 @@ public class ConsignmentEntity {
     }
 
     @Basic
-    @Column(name = "SendPlace", nullable = true, length = 200)
+    @Column(name = "SendPlace")
     public String getSendPlace() {
         return sendPlace;
     }
@@ -111,7 +107,7 @@ public class ConsignmentEntity {
     }
 
     @Basic
-    @Column(name = "InputUserID", nullable = true, length = 40)
+    @Column(name = "InputUserID")
     public String getInputUserId() {
         return inputUserId;
     }
@@ -121,7 +117,7 @@ public class ConsignmentEntity {
     }
 
     @Basic
-    @Column(name = "InputDate", nullable = true)
+    @Column(name = "InputDate")
     public Timestamp getInputDate() {
         return inputDate;
     }
@@ -131,7 +127,7 @@ public class ConsignmentEntity {
     }
 
     @Basic
-    @Column(name = "ModifyUserID", nullable = true, length = 40)
+    @Column(name = "ModifyUserID")
     public String getModifyUserId() {
         return modifyUserId;
     }
@@ -141,7 +137,7 @@ public class ConsignmentEntity {
     }
 
     @Basic
-    @Column(name = "ModifyDate", nullable = true)
+    @Column(name = "ModifyDate")
     public Timestamp getModifyDate() {
         return modifyDate;
     }
@@ -151,7 +147,7 @@ public class ConsignmentEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
@@ -161,7 +157,7 @@ public class ConsignmentEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 500)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
@@ -171,7 +167,7 @@ public class ConsignmentEntity {
     }
 
     @Basic
-    @Column(name = "ExpressCode", nullable = true, length = 100)
+    @Column(name = "ExpressCode")
     public String getExpressCode() {
         return expressCode;
     }
@@ -181,7 +177,7 @@ public class ConsignmentEntity {
     }
 
     @Basic
-    @Column(name = "EditID", nullable = true, length = 40)
+    @Column(name = "EditID")
     public String getEditId() {
         return editId;
     }
@@ -191,13 +187,33 @@ public class ConsignmentEntity {
     }
 
     @Basic
-    @Column(name = "SaleCode", nullable = true, length = 500)
+    @Column(name = "SaleCode")
     public String getSaleCode() {
         return saleCode;
     }
 
     public void setSaleCode(String saleCode) {
         this.saleCode = saleCode;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -225,6 +241,8 @@ public class ConsignmentEntity {
         if (expressCode != null ? !expressCode.equals(that.expressCode) : that.expressCode != null) return false;
         if (editId != null ? !editId.equals(that.editId) : that.editId != null) return false;
         if (saleCode != null ? !saleCode.equals(that.saleCode) : that.saleCode != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -248,6 +266,8 @@ public class ConsignmentEntity {
         result = 31 * result + (expressCode != null ? expressCode.hashCode() : 0);
         result = 31 * result + (editId != null ? editId.hashCode() : 0);
         result = 31 * result + (saleCode != null ? saleCode.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

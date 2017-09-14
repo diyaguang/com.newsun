@@ -3,12 +3,6 @@ package com.newsun.web.entity;
 import javax.persistence.*;
 import java.sql.Date;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:22 PM
- */
 @Entity
 @Table(name = "Provider", schema = "dygstudio", catalog = "")
 public class ProviderEntity {
@@ -36,9 +30,11 @@ public class ProviderEntity {
     private Date modifyDate;
     private Integer state;
     private Integer isDel;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -48,7 +44,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 100)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -58,7 +54,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "Name", nullable = true, length = 100)
+    @Column(name = "Name")
     public String getName() {
         return name;
     }
@@ -68,7 +64,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "CompanyName", nullable = true, length = 200)
+    @Column(name = "CompanyName")
     public String getCompanyName() {
         return companyName;
     }
@@ -78,7 +74,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "UserID", nullable = true, length = 40)
+    @Column(name = "UserID")
     public String getUserId() {
         return userId;
     }
@@ -88,7 +84,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "Industry", nullable = true, length = 100)
+    @Column(name = "Industry")
     public String getIndustry() {
         return industry;
     }
@@ -98,7 +94,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "DutyID", nullable = true, length = 40)
+    @Column(name = "DutyID")
     public String getDutyId() {
         return dutyId;
     }
@@ -108,7 +104,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "RegisterAddress", nullable = true, length = 200)
+    @Column(name = "RegisterAddress")
     public String getRegisterAddress() {
         return registerAddress;
     }
@@ -118,7 +114,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "Bank", nullable = true, length = 50)
+    @Column(name = "Bank")
     public String getBank() {
         return bank;
     }
@@ -128,7 +124,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "BankAccount", nullable = true, length = 50)
+    @Column(name = "BankAccount")
     public String getBankAccount() {
         return bankAccount;
     }
@@ -138,7 +134,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "Web", nullable = true, length = 200)
+    @Column(name = "Web")
     public String getWeb() {
         return web;
     }
@@ -148,7 +144,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "ProvideType", nullable = true)
+    @Column(name = "ProvideType")
     public Integer getProvideType() {
         return provideType;
     }
@@ -158,7 +154,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "DependencyType", nullable = true)
+    @Column(name = "DependencyType")
     public Integer getDependencyType() {
         return dependencyType;
     }
@@ -168,7 +164,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "OwenName", nullable = true, length = 20)
+    @Column(name = "OwenName")
     public String getOwenName() {
         return owenName;
     }
@@ -178,7 +174,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "Phone", nullable = true, length = 20)
+    @Column(name = "Phone")
     public String getPhone() {
         return phone;
     }
@@ -188,7 +184,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "Address", nullable = true, length = 200)
+    @Column(name = "Address")
     public String getAddress() {
         return address;
     }
@@ -198,7 +194,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "PayMode", nullable = true, length = 200)
+    @Column(name = "PayMode")
     public String getPayMode() {
         return payMode;
     }
@@ -208,7 +204,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 500)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
@@ -218,7 +214,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "InputUserID", nullable = true, length = 40)
+    @Column(name = "InputUserID")
     public String getInputUserId() {
         return inputUserId;
     }
@@ -228,7 +224,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "InputDate", nullable = true)
+    @Column(name = "InputDate")
     public Date getInputDate() {
         return inputDate;
     }
@@ -238,7 +234,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "ModifyUserID", nullable = true, length = 40)
+    @Column(name = "ModifyUserID")
     public String getModifyUserId() {
         return modifyUserId;
     }
@@ -248,7 +244,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "ModifyDate", nullable = true)
+    @Column(name = "ModifyDate")
     public Date getModifyDate() {
         return modifyDate;
     }
@@ -258,7 +254,7 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "State", nullable = true)
+    @Column(name = "State")
     public Integer getState() {
         return state;
     }
@@ -268,13 +264,33 @@ public class ProviderEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
 
     public void setIsDel(Integer isDel) {
         this.isDel = isDel;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -310,6 +326,8 @@ public class ProviderEntity {
         if (modifyDate != null ? !modifyDate.equals(that.modifyDate) : that.modifyDate != null) return false;
         if (state != null ? !state.equals(that.state) : that.state != null) return false;
         if (isDel != null ? !isDel.equals(that.isDel) : that.isDel != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -340,6 +358,8 @@ public class ProviderEntity {
         result = 31 * result + (modifyDate != null ? modifyDate.hashCode() : 0);
         result = 31 * result + (state != null ? state.hashCode() : 0);
         result = 31 * result + (isDel != null ? isDel.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

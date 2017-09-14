@@ -5,14 +5,10 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.UserRoleLinkEntity" table="User_Role_Link" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="userId">
-            <column name="UserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="roleId">
-            <column name="RoleID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="userId" column="UserID"/>
+        <property name="roleId" column="RoleID"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

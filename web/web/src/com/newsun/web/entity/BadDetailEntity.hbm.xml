@@ -5,29 +5,15 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.BadDetailEntity" table="BadDetail" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="badId">
-            <column name="BadID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="productId">
-            <column name="ProductID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="price">
-            <column name="Price" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="money">
-            <column name="Money" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="amount">
-            <column name="Amount" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="note">
-            <column name="Note" sql-type="varchar(200)" length="200" not-null="true"/>
-        </property>
-        <property name="bzPrice">
-            <column name="BzPrice" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="badId" column="BadID"/>
+        <property name="productId" column="ProductID"/>
+        <property name="price" column="Price"/>
+        <property name="money" column="Money"/>
+        <property name="amount" column="Amount"/>
+        <property name="note" column="Note"/>
+        <property name="bzPrice" column="BzPrice"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

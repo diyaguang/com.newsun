@@ -4,12 +4,6 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:22 PM
- */
 @Entity
 @Table(name = "SaleInvoice", schema = "dygstudio", catalog = "")
 public class SaleInvoiceEntity {
@@ -33,9 +27,11 @@ public class SaleInvoiceEntity {
     private String editId;
     private String note;
     private String billCode;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -45,7 +41,7 @@ public class SaleInvoiceEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 200)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -55,7 +51,7 @@ public class SaleInvoiceEntity {
     }
 
     @Basic
-    @Column(name = "ClientID", nullable = true, length = 40)
+    @Column(name = "ClientID")
     public String getClientId() {
         return clientId;
     }
@@ -65,7 +61,7 @@ public class SaleInvoiceEntity {
     }
 
     @Basic
-    @Column(name = "OpUserName", nullable = true, length = 50)
+    @Column(name = "OpUserName")
     public String getOpUserName() {
         return opUserName;
     }
@@ -75,7 +71,7 @@ public class SaleInvoiceEntity {
     }
 
     @Basic
-    @Column(name = "OpDate", nullable = true)
+    @Column(name = "OpDate")
     public Date getOpDate() {
         return opDate;
     }
@@ -85,7 +81,7 @@ public class SaleInvoiceEntity {
     }
 
     @Basic
-    @Column(name = "InvoiceType", nullable = true)
+    @Column(name = "InvoiceType")
     public Integer getInvoiceType() {
         return invoiceType;
     }
@@ -95,7 +91,7 @@ public class SaleInvoiceEntity {
     }
 
     @Basic
-    @Column(name = "NoDutyMoney", nullable = true, precision = 2)
+    @Column(name = "NoDutyMoney")
     public BigDecimal getNoDutyMoney() {
         return noDutyMoney;
     }
@@ -105,7 +101,7 @@ public class SaleInvoiceEntity {
     }
 
     @Basic
-    @Column(name = "Duty", nullable = true, precision = 2)
+    @Column(name = "Duty")
     public BigDecimal getDuty() {
         return duty;
     }
@@ -115,7 +111,7 @@ public class SaleInvoiceEntity {
     }
 
     @Basic
-    @Column(name = "Money", nullable = true, precision = 2)
+    @Column(name = "Money")
     public BigDecimal getMoney() {
         return money;
     }
@@ -125,7 +121,7 @@ public class SaleInvoiceEntity {
     }
 
     @Basic
-    @Column(name = "BalanceState", nullable = true)
+    @Column(name = "BalanceState")
     public Integer getBalanceState() {
         return balanceState;
     }
@@ -135,7 +131,7 @@ public class SaleInvoiceEntity {
     }
 
     @Basic
-    @Column(name = "UserID", nullable = true, length = 40)
+    @Column(name = "UserID")
     public String getUserId() {
         return userId;
     }
@@ -145,7 +141,7 @@ public class SaleInvoiceEntity {
     }
 
     @Basic
-    @Column(name = "InputUserID", nullable = true, length = 40)
+    @Column(name = "InputUserID")
     public String getInputUserId() {
         return inputUserId;
     }
@@ -155,7 +151,7 @@ public class SaleInvoiceEntity {
     }
 
     @Basic
-    @Column(name = "InputDate", nullable = true)
+    @Column(name = "InputDate")
     public Date getInputDate() {
         return inputDate;
     }
@@ -165,7 +161,7 @@ public class SaleInvoiceEntity {
     }
 
     @Basic
-    @Column(name = "ModifyUserID", nullable = true, length = 40)
+    @Column(name = "ModifyUserID")
     public String getModifyUserId() {
         return modifyUserId;
     }
@@ -175,7 +171,7 @@ public class SaleInvoiceEntity {
     }
 
     @Basic
-    @Column(name = "ModifyDate", nullable = true)
+    @Column(name = "ModifyDate")
     public Date getModifyDate() {
         return modifyDate;
     }
@@ -185,7 +181,7 @@ public class SaleInvoiceEntity {
     }
 
     @Basic
-    @Column(name = "ApproveState", nullable = true)
+    @Column(name = "ApproveState")
     public Integer getApproveState() {
         return approveState;
     }
@@ -195,7 +191,7 @@ public class SaleInvoiceEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
@@ -205,7 +201,7 @@ public class SaleInvoiceEntity {
     }
 
     @Basic
-    @Column(name = "EditID", nullable = true, length = 40)
+    @Column(name = "EditID")
     public String getEditId() {
         return editId;
     }
@@ -215,7 +211,7 @@ public class SaleInvoiceEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 500)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
@@ -225,13 +221,33 @@ public class SaleInvoiceEntity {
     }
 
     @Basic
-    @Column(name = "BillCode", nullable = true, length = 200)
+    @Column(name = "BillCode")
     public String getBillCode() {
         return billCode;
     }
 
     public void setBillCode(String billCode) {
         this.billCode = billCode;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -261,6 +277,8 @@ public class SaleInvoiceEntity {
         if (editId != null ? !editId.equals(that.editId) : that.editId != null) return false;
         if (note != null ? !note.equals(that.note) : that.note != null) return false;
         if (billCode != null ? !billCode.equals(that.billCode) : that.billCode != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -287,6 +305,8 @@ public class SaleInvoiceEntity {
         result = 31 * result + (editId != null ? editId.hashCode() : 0);
         result = 31 * result + (note != null ? note.hashCode() : 0);
         result = 31 * result + (billCode != null ? billCode.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

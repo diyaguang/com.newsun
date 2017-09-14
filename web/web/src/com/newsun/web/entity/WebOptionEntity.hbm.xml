@@ -5,17 +5,11 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.WebOptionEntity" table="WebOption" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="setKey">
-            <column name="SetKey" sql-type="varchar(50)" length="50" not-null="true"/>
-        </property>
-        <property name="setName">
-            <column name="SetName" sql-type="varchar(50)" length="50" not-null="true"/>
-        </property>
-        <property name="setValue">
-            <column name="SetValue" sql-type="varchar(500)" length="500" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="setKey" column="SetKey"/>
+        <property name="setName" column="SetName"/>
+        <property name="setValue" column="SetValue"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

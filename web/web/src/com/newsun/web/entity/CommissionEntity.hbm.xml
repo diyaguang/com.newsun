@@ -5,38 +5,18 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.CommissionEntity" table="Commission" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="name">
-            <column name="Name" sql-type="varchar(200)" length="200" not-null="true"/>
-        </property>
-        <property name="billId">
-            <column name="BillID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="billCode">
-            <column name="BillCode" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="url">
-            <column name="Url" sql-type="varchar(200)" length="200" not-null="true"/>
-        </property>
-        <property name="isRead">
-            <column name="IsRead" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="permissionsCode">
-            <column name="PermissionsCode" sql-type="varchar(50)" length="50" not-null="true"/>
-        </property>
-        <property name="createUserId">
-            <column name="CreateUserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="createDate">
-            <column name="CreateDate" sql-type="datetime" not-null="true"/>
-        </property>
-        <property name="readUserId">
-            <column name="ReadUserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="readDate">
-            <column name="ReadDate" sql-type="datetime" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="name" column="Name"/>
+        <property name="billId" column="BillID"/>
+        <property name="billCode" column="BillCode"/>
+        <property name="url" column="Url"/>
+        <property name="isRead" column="IsRead"/>
+        <property name="permissionsCode" column="PermissionsCode"/>
+        <property name="createUserId" column="CreateUserID"/>
+        <property name="createDate" column="CreateDate"/>
+        <property name="readUserId" column="ReadUserID"/>
+        <property name="readDate" column="ReadDate"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

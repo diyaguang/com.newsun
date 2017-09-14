@@ -5,12 +5,6 @@ import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.Timestamp;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:20 PM
- */
 @Entity
 @Table(name = "AccountBill", schema = "dygstudio", catalog = "")
 public class AccountBillEntity {
@@ -28,9 +22,11 @@ public class AccountBillEntity {
     private Integer type;
     private BigDecimal money;
     private String uniqueId;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -40,7 +36,7 @@ public class AccountBillEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 100)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -50,7 +46,7 @@ public class AccountBillEntity {
     }
 
     @Basic
-    @Column(name = "Date", nullable = true)
+    @Column(name = "Date")
     public Timestamp getDate() {
         return date;
     }
@@ -60,7 +56,7 @@ public class AccountBillEntity {
     }
 
     @Basic
-    @Column(name = "BillID", nullable = true, length = 40)
+    @Column(name = "BillID")
     public String getBillId() {
         return billId;
     }
@@ -70,7 +66,7 @@ public class AccountBillEntity {
     }
 
     @Basic
-    @Column(name = "InputUserID", nullable = true)
+    @Column(name = "InputUserID")
     public Integer getInputUserId() {
         return inputUserId;
     }
@@ -80,7 +76,7 @@ public class AccountBillEntity {
     }
 
     @Basic
-    @Column(name = "InputDate", nullable = true)
+    @Column(name = "InputDate")
     public Timestamp getInputDate() {
         return inputDate;
     }
@@ -90,7 +86,7 @@ public class AccountBillEntity {
     }
 
     @Basic
-    @Column(name = "ModifyUserID", nullable = true)
+    @Column(name = "ModifyUserID")
     public Integer getModifyUserId() {
         return modifyUserId;
     }
@@ -100,7 +96,7 @@ public class AccountBillEntity {
     }
 
     @Basic
-    @Column(name = "ModifyDate", nullable = true)
+    @Column(name = "ModifyDate")
     public Date getModifyDate() {
         return modifyDate;
     }
@@ -110,7 +106,7 @@ public class AccountBillEntity {
     }
 
     @Basic
-    @Column(name = "ApproveState", nullable = true)
+    @Column(name = "ApproveState")
     public Integer getApproveState() {
         return approveState;
     }
@@ -120,7 +116,7 @@ public class AccountBillEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
@@ -130,7 +126,7 @@ public class AccountBillEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 500)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
@@ -140,7 +136,7 @@ public class AccountBillEntity {
     }
 
     @Basic
-    @Column(name = "Type", nullable = true)
+    @Column(name = "Type")
     public Integer getType() {
         return type;
     }
@@ -150,7 +146,7 @@ public class AccountBillEntity {
     }
 
     @Basic
-    @Column(name = "Money", nullable = true, precision = 2)
+    @Column(name = "Money")
     public BigDecimal getMoney() {
         return money;
     }
@@ -160,13 +156,33 @@ public class AccountBillEntity {
     }
 
     @Basic
-    @Column(name = "UniqueID", nullable = true, length = 50)
+    @Column(name = "UniqueID")
     public String getUniqueId() {
         return uniqueId;
     }
 
     public void setUniqueId(String uniqueId) {
         this.uniqueId = uniqueId;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -190,6 +206,8 @@ public class AccountBillEntity {
         if (type != null ? !type.equals(that.type) : that.type != null) return false;
         if (money != null ? !money.equals(that.money) : that.money != null) return false;
         if (uniqueId != null ? !uniqueId.equals(that.uniqueId) : that.uniqueId != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -210,6 +228,8 @@ public class AccountBillEntity {
         result = 31 * result + (type != null ? type.hashCode() : 0);
         result = 31 * result + (money != null ? money.hashCode() : 0);
         result = 31 * result + (uniqueId != null ? uniqueId.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

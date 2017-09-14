@@ -5,62 +5,26 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.ManufactureEntity" table="Manufacture" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="code">
-            <column name="Code" sql-type="varchar(100)" length="100" not-null="true"/>
-        </property>
-        <property name="createDate">
-            <column name="CreateDate" sql-type="date" not-null="true"/>
-        </property>
-        <property name="bomId">
-            <column name="BomID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="userId">
-            <column name="UserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="outDepotId">
-            <column name="OutDepotID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="inDepotId">
-            <column name="InDepotID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="amount">
-            <column name="Amount" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="price">
-            <column name="Price" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="money">
-            <column name="Money" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="inputUserId">
-            <column name="InputUserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="inputDate">
-            <column name="InputDate" sql-type="date" not-null="true"/>
-        </property>
-        <property name="modifyUserId">
-            <column name="ModifyUserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="modifyDate">
-            <column name="ModifyDate" sql-type="date" not-null="true"/>
-        </property>
-        <property name="isDel">
-            <column name="IsDel" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="approveState">
-            <column name="ApproveState" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="state">
-            <column name="State" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="note">
-            <column name="Note" sql-type="varchar(500)" length="500" not-null="true"/>
-        </property>
-        <property name="manufacturePh">
-            <column name="ManufacturePH" sql-type="varchar(50)" length="50" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="code" column="Code"/>
+        <property name="createDate" column="CreateDate"/>
+        <property name="bomId" column="BomID"/>
+        <property name="userId" column="UserID"/>
+        <property name="outDepotId" column="OutDepotID"/>
+        <property name="inDepotId" column="InDepotID"/>
+        <property name="amount" column="Amount"/>
+        <property name="price" column="Price"/>
+        <property name="money" column="Money"/>
+        <property name="inputUserId" column="InputUserID"/>
+        <property name="inputDate" column="InputDate"/>
+        <property name="modifyUserId" column="ModifyUserID"/>
+        <property name="modifyDate" column="ModifyDate"/>
+        <property name="isDel" column="IsDel"/>
+        <property name="approveState" column="ApproveState"/>
+        <property name="state" column="State"/>
+        <property name="note" column="Note"/>
+        <property name="manufacturePh" column="ManufacturePH"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

@@ -2,20 +2,16 @@ package com.newsun.web.entity;
 
 import javax.persistence.*;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:22 PM
- */
 @Entity
 @Table(name = "LoginGroup_User_Link", schema = "dygstudio", catalog = "")
 public class LoginGroupUserLinkEntity {
     private String userId;
     private String loginGroupId;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "UserID", nullable = false, length = 40)
+    @Column(name = "UserID")
     public String getUserId() {
         return userId;
     }
@@ -25,13 +21,33 @@ public class LoginGroupUserLinkEntity {
     }
 
     @Basic
-    @Column(name = "LoginGroupID", nullable = true, length = 40)
+    @Column(name = "LoginGroupID")
     public String getLoginGroupId() {
         return loginGroupId;
     }
 
     public void setLoginGroupId(String loginGroupId) {
         this.loginGroupId = loginGroupId;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -43,6 +59,8 @@ public class LoginGroupUserLinkEntity {
 
         if (userId != null ? !userId.equals(that.userId) : that.userId != null) return false;
         if (loginGroupId != null ? !loginGroupId.equals(that.loginGroupId) : that.loginGroupId != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -51,6 +69,8 @@ public class LoginGroupUserLinkEntity {
     public int hashCode() {
         int result = userId != null ? userId.hashCode() : 0;
         result = 31 * result + (loginGroupId != null ? loginGroupId.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

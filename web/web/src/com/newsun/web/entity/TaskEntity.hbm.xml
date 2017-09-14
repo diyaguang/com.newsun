@@ -5,50 +5,22 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.TaskEntity" table="Task" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="code">
-            <column name="Code" sql-type="varchar(50)" length="50" not-null="true"/>
-        </property>
-        <property name="taskType">
-            <column name="TaskType" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="title">
-            <column name="Title" sql-type="varchar(200)" length="200" not-null="true"/>
-        </property>
-        <property name="contents">
-            <column name="Contents" sql-type="varchar(1000)" length="1000" not-null="true"/>
-        </property>
-        <property name="date">
-            <column name="Date" sql-type="date" not-null="true"/>
-        </property>
-        <property name="taskState">
-            <column name="TaskState" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="note">
-            <column name="Note" sql-type="varchar(200)" length="200" not-null="true"/>
-        </property>
-        <property name="nextUserId">
-            <column name="NextUserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="inputUserId">
-            <column name="InputUserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="inputDate">
-            <column name="InputDate" sql-type="date" not-null="true"/>
-        </property>
-        <property name="modifyUserId">
-            <column name="ModifyUserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="modifyDate">
-            <column name="ModifyDate" sql-type="date" not-null="true"/>
-        </property>
-        <property name="isDel">
-            <column name="IsDel" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="editId">
-            <column name="EditID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="code" column="Code"/>
+        <property name="taskType" column="TaskType"/>
+        <property name="title" column="Title"/>
+        <property name="contents" column="Contents"/>
+        <property name="date" column="Date"/>
+        <property name="taskState" column="TaskState"/>
+        <property name="note" column="Note"/>
+        <property name="nextUserId" column="NextUserID"/>
+        <property name="inputUserId" column="InputUserID"/>
+        <property name="inputDate" column="InputDate"/>
+        <property name="modifyUserId" column="ModifyUserID"/>
+        <property name="modifyDate" column="ModifyDate"/>
+        <property name="isDel" column="IsDel"/>
+        <property name="editId" column="EditID"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

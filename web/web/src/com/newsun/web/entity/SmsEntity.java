@@ -3,12 +3,6 @@ package com.newsun.web.entity;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:22 PM
- */
 @Entity
 @Table(name = "SMS", schema = "dygstudio", catalog = "")
 public class SmsEntity {
@@ -24,9 +18,11 @@ public class SmsEntity {
     private Timestamp sendDate;
     private Integer status;
     private Integer isDel;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -36,7 +32,7 @@ public class SmsEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 50)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -46,7 +42,7 @@ public class SmsEntity {
     }
 
     @Basic
-    @Column(name = "Message", nullable = true, length = 1000)
+    @Column(name = "Message")
     public String getMessage() {
         return message;
     }
@@ -56,7 +52,7 @@ public class SmsEntity {
     }
 
     @Basic
-    @Column(name = "UserID", nullable = true, length = 40)
+    @Column(name = "UserID")
     public String getUserId() {
         return userId;
     }
@@ -66,7 +62,7 @@ public class SmsEntity {
     }
 
     @Basic
-    @Column(name = "CreateDate", nullable = true)
+    @Column(name = "CreateDate")
     public Timestamp getCreateDate() {
         return createDate;
     }
@@ -76,7 +72,7 @@ public class SmsEntity {
     }
 
     @Basic
-    @Column(name = "ErrorInfo", nullable = true, length = 1000)
+    @Column(name = "ErrorInfo")
     public String getErrorInfo() {
         return errorInfo;
     }
@@ -86,7 +82,7 @@ public class SmsEntity {
     }
 
     @Basic
-    @Column(name = "OpType", nullable = true)
+    @Column(name = "OpType")
     public Integer getOpType() {
         return opType;
     }
@@ -96,7 +92,7 @@ public class SmsEntity {
     }
 
     @Basic
-    @Column(name = "CreateType", nullable = true)
+    @Column(name = "CreateType")
     public Integer getCreateType() {
         return createType;
     }
@@ -106,7 +102,7 @@ public class SmsEntity {
     }
 
     @Basic
-    @Column(name = "Address", nullable = true, length = 20)
+    @Column(name = "Address")
     public String getAddress() {
         return address;
     }
@@ -116,7 +112,7 @@ public class SmsEntity {
     }
 
     @Basic
-    @Column(name = "SendDate", nullable = true)
+    @Column(name = "SendDate")
     public Timestamp getSendDate() {
         return sendDate;
     }
@@ -126,7 +122,7 @@ public class SmsEntity {
     }
 
     @Basic
-    @Column(name = "Status", nullable = true)
+    @Column(name = "Status")
     public Integer getStatus() {
         return status;
     }
@@ -136,13 +132,33 @@ public class SmsEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
 
     public void setIsDel(Integer isDel) {
         this.isDel = isDel;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -164,6 +180,8 @@ public class SmsEntity {
         if (sendDate != null ? !sendDate.equals(smsEntity.sendDate) : smsEntity.sendDate != null) return false;
         if (status != null ? !status.equals(smsEntity.status) : smsEntity.status != null) return false;
         if (isDel != null ? !isDel.equals(smsEntity.isDel) : smsEntity.isDel != null) return false;
+        if (bookId != null ? !bookId.equals(smsEntity.bookId) : smsEntity.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(smsEntity.companyId) : smsEntity.companyId != null) return false;
 
         return true;
     }
@@ -182,6 +200,8 @@ public class SmsEntity {
         result = 31 * result + (sendDate != null ? sendDate.hashCode() : 0);
         result = 31 * result + (status != null ? status.hashCode() : 0);
         result = 31 * result + (isDel != null ? isDel.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

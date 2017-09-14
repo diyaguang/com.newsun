@@ -2,12 +2,6 @@ package com.newsun.web.entity;
 
 import javax.persistence.*;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:21 PM
- */
 @Entity
 @Table(name = "Functions", schema = "dygstudio", catalog = "")
 public class FunctionsEntity {
@@ -21,9 +15,11 @@ public class FunctionsEntity {
     private Integer sort;
     private String imagePath;
     private String iconName;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -33,7 +29,7 @@ public class FunctionsEntity {
     }
 
     @Basic
-    @Column(name = "ParentID", nullable = true, length = 40)
+    @Column(name = "ParentID")
     public String getParentId() {
         return parentId;
     }
@@ -43,7 +39,7 @@ public class FunctionsEntity {
     }
 
     @Basic
-    @Column(name = "FuncName", nullable = true, length = 100)
+    @Column(name = "FuncName")
     public String getFuncName() {
         return funcName;
     }
@@ -53,7 +49,7 @@ public class FunctionsEntity {
     }
 
     @Basic
-    @Column(name = "FuncCode", nullable = true, length = 100)
+    @Column(name = "FuncCode")
     public String getFuncCode() {
         return funcCode;
     }
@@ -63,7 +59,7 @@ public class FunctionsEntity {
     }
 
     @Basic
-    @Column(name = "State", nullable = true)
+    @Column(name = "State")
     public Integer getState() {
         return state;
     }
@@ -73,7 +69,7 @@ public class FunctionsEntity {
     }
 
     @Basic
-    @Column(name = "Level", nullable = true)
+    @Column(name = "Level")
     public Integer getLevel() {
         return level;
     }
@@ -83,7 +79,7 @@ public class FunctionsEntity {
     }
 
     @Basic
-    @Column(name = "UrlPath", nullable = true, length = 500)
+    @Column(name = "UrlPath")
     public String getUrlPath() {
         return urlPath;
     }
@@ -93,7 +89,7 @@ public class FunctionsEntity {
     }
 
     @Basic
-    @Column(name = "Sort", nullable = true)
+    @Column(name = "Sort")
     public Integer getSort() {
         return sort;
     }
@@ -103,7 +99,7 @@ public class FunctionsEntity {
     }
 
     @Basic
-    @Column(name = "ImagePath", nullable = true, length = 100)
+    @Column(name = "ImagePath")
     public String getImagePath() {
         return imagePath;
     }
@@ -113,13 +109,33 @@ public class FunctionsEntity {
     }
 
     @Basic
-    @Column(name = "IconName", nullable = true, length = 50)
+    @Column(name = "IconName")
     public String getIconName() {
         return iconName;
     }
 
     public void setIconName(String iconName) {
         this.iconName = iconName;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -139,6 +155,8 @@ public class FunctionsEntity {
         if (sort != null ? !sort.equals(that.sort) : that.sort != null) return false;
         if (imagePath != null ? !imagePath.equals(that.imagePath) : that.imagePath != null) return false;
         if (iconName != null ? !iconName.equals(that.iconName) : that.iconName != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -155,6 +173,8 @@ public class FunctionsEntity {
         result = 31 * result + (sort != null ? sort.hashCode() : 0);
         result = 31 * result + (imagePath != null ? imagePath.hashCode() : 0);
         result = 31 * result + (iconName != null ? iconName.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

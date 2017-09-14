@@ -5,29 +5,15 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.ClientAccountEntity" table="ClientAccount" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="int(11)"/>
-        </id>
-        <property name="opType">
-            <column name="OpType" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="opCode">
-            <column name="OpCode" sql-type="varchar(200)" length="200" not-null="true"/>
-        </property>
-        <property name="opId">
-            <column name="OpID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="money">
-            <column name="Money" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="date">
-            <column name="Date" sql-type="date" not-null="true"/>
-        </property>
-        <property name="userId">
-            <column name="UserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="clientId">
-            <column name="ClientID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="opType" column="OpType"/>
+        <property name="opCode" column="OpCode"/>
+        <property name="opId" column="OpID"/>
+        <property name="money" column="Money"/>
+        <property name="date" column="Date"/>
+        <property name="userId" column="UserID"/>
+        <property name="clientId" column="ClientID"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

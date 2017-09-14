@@ -3,12 +3,6 @@ package com.newsun.web.entity;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:21 PM
- */
 @Entity
 @Table(name = "Depot", schema = "dygstudio", catalog = "")
 public class DepotEntity {
@@ -25,9 +19,11 @@ public class DepotEntity {
     private String modifyUserId;
     private Timestamp modifyDate;
     private Integer isDel;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -37,7 +33,7 @@ public class DepotEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 100)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -47,7 +43,7 @@ public class DepotEntity {
     }
 
     @Basic
-    @Column(name = "Name", nullable = true, length = 100)
+    @Column(name = "Name")
     public String getName() {
         return name;
     }
@@ -57,7 +53,7 @@ public class DepotEntity {
     }
 
     @Basic
-    @Column(name = "UserID", nullable = true, length = 40)
+    @Column(name = "UserID")
     public String getUserId() {
         return userId;
     }
@@ -67,7 +63,7 @@ public class DepotEntity {
     }
 
     @Basic
-    @Column(name = "Phone", nullable = true, length = 100)
+    @Column(name = "Phone")
     public String getPhone() {
         return phone;
     }
@@ -77,7 +73,7 @@ public class DepotEntity {
     }
 
     @Basic
-    @Column(name = "Address", nullable = true, length = 300)
+    @Column(name = "Address")
     public String getAddress() {
         return address;
     }
@@ -87,7 +83,7 @@ public class DepotEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 500)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
@@ -97,7 +93,7 @@ public class DepotEntity {
     }
 
     @Basic
-    @Column(name = "State", nullable = true)
+    @Column(name = "State")
     public Integer getState() {
         return state;
     }
@@ -107,7 +103,7 @@ public class DepotEntity {
     }
 
     @Basic
-    @Column(name = "InputUserID", nullable = true, length = 40)
+    @Column(name = "InputUserID")
     public String getInputUserId() {
         return inputUserId;
     }
@@ -117,7 +113,7 @@ public class DepotEntity {
     }
 
     @Basic
-    @Column(name = "InputDate", nullable = true)
+    @Column(name = "InputDate")
     public Timestamp getInputDate() {
         return inputDate;
     }
@@ -127,7 +123,7 @@ public class DepotEntity {
     }
 
     @Basic
-    @Column(name = "ModifyUserID", nullable = true, length = 40)
+    @Column(name = "ModifyUserID")
     public String getModifyUserId() {
         return modifyUserId;
     }
@@ -137,7 +133,7 @@ public class DepotEntity {
     }
 
     @Basic
-    @Column(name = "ModifyDate", nullable = true)
+    @Column(name = "ModifyDate")
     public Timestamp getModifyDate() {
         return modifyDate;
     }
@@ -147,13 +143,33 @@ public class DepotEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
 
     public void setIsDel(Integer isDel) {
         this.isDel = isDel;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -176,6 +192,8 @@ public class DepotEntity {
         if (modifyUserId != null ? !modifyUserId.equals(that.modifyUserId) : that.modifyUserId != null) return false;
         if (modifyDate != null ? !modifyDate.equals(that.modifyDate) : that.modifyDate != null) return false;
         if (isDel != null ? !isDel.equals(that.isDel) : that.isDel != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -195,6 +213,8 @@ public class DepotEntity {
         result = 31 * result + (modifyUserId != null ? modifyUserId.hashCode() : 0);
         result = 31 * result + (modifyDate != null ? modifyDate.hashCode() : 0);
         result = 31 * result + (isDel != null ? isDel.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

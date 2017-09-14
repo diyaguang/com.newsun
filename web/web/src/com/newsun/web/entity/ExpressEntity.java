@@ -3,12 +3,6 @@ package com.newsun.web.entity;
 import javax.persistence.*;
 import java.sql.Date;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:21 PM
- */
 @Entity
 @Table(name = "Express", schema = "dygstudio", catalog = "")
 public class ExpressEntity {
@@ -28,9 +22,11 @@ public class ExpressEntity {
     private String note;
     private String systemPath;
     private String queryUrl;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -40,7 +36,7 @@ public class ExpressEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 100)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -50,7 +46,7 @@ public class ExpressEntity {
     }
 
     @Basic
-    @Column(name = "Name", nullable = true, length = 200)
+    @Column(name = "Name")
     public String getName() {
         return name;
     }
@@ -60,7 +56,7 @@ public class ExpressEntity {
     }
 
     @Basic
-    @Column(name = "Phone", nullable = true, length = 50)
+    @Column(name = "Phone")
     public String getPhone() {
         return phone;
     }
@@ -70,7 +66,7 @@ public class ExpressEntity {
     }
 
     @Basic
-    @Column(name = "UserName", nullable = true, length = 50)
+    @Column(name = "UserName")
     public String getUserName() {
         return userName;
     }
@@ -80,7 +76,7 @@ public class ExpressEntity {
     }
 
     @Basic
-    @Column(name = "UserPhone", nullable = true, length = 50)
+    @Column(name = "UserPhone")
     public String getUserPhone() {
         return userPhone;
     }
@@ -90,7 +86,7 @@ public class ExpressEntity {
     }
 
     @Basic
-    @Column(name = "TakeType", nullable = true)
+    @Column(name = "TakeType")
     public Integer getTakeType() {
         return takeType;
     }
@@ -100,7 +96,7 @@ public class ExpressEntity {
     }
 
     @Basic
-    @Column(name = "TakePlace", nullable = true, length = 200)
+    @Column(name = "TakePlace")
     public String getTakePlace() {
         return takePlace;
     }
@@ -110,7 +106,7 @@ public class ExpressEntity {
     }
 
     @Basic
-    @Column(name = "InputUserID", nullable = true, length = 40)
+    @Column(name = "InputUserID")
     public String getInputUserId() {
         return inputUserId;
     }
@@ -120,7 +116,7 @@ public class ExpressEntity {
     }
 
     @Basic
-    @Column(name = "InputDate", nullable = true)
+    @Column(name = "InputDate")
     public Date getInputDate() {
         return inputDate;
     }
@@ -130,7 +126,7 @@ public class ExpressEntity {
     }
 
     @Basic
-    @Column(name = "ModifyUserID", nullable = true, length = 40)
+    @Column(name = "ModifyUserID")
     public String getModifyUserId() {
         return modifyUserId;
     }
@@ -140,7 +136,7 @@ public class ExpressEntity {
     }
 
     @Basic
-    @Column(name = "ModifyDate", nullable = true)
+    @Column(name = "ModifyDate")
     public Date getModifyDate() {
         return modifyDate;
     }
@@ -150,7 +146,7 @@ public class ExpressEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
@@ -160,7 +156,7 @@ public class ExpressEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 500)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
@@ -170,7 +166,7 @@ public class ExpressEntity {
     }
 
     @Basic
-    @Column(name = "SystemPath", nullable = true, length = 1000)
+    @Column(name = "SystemPath")
     public String getSystemPath() {
         return systemPath;
     }
@@ -180,13 +176,33 @@ public class ExpressEntity {
     }
 
     @Basic
-    @Column(name = "QueryUrl", nullable = true, length = 1000)
+    @Column(name = "QueryUrl")
     public String getQueryUrl() {
         return queryUrl;
     }
 
     public void setQueryUrl(String queryUrl) {
         this.queryUrl = queryUrl;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -212,6 +228,8 @@ public class ExpressEntity {
         if (note != null ? !note.equals(that.note) : that.note != null) return false;
         if (systemPath != null ? !systemPath.equals(that.systemPath) : that.systemPath != null) return false;
         if (queryUrl != null ? !queryUrl.equals(that.queryUrl) : that.queryUrl != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -234,6 +252,8 @@ public class ExpressEntity {
         result = 31 * result + (note != null ? note.hashCode() : 0);
         result = 31 * result + (systemPath != null ? systemPath.hashCode() : 0);
         result = 31 * result + (queryUrl != null ? queryUrl.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

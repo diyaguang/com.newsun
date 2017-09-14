@@ -5,44 +5,20 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.StockDetailEntity" table="StockDetail" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="stockId">
-            <column name="StockID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="productId">
-            <column name="ProductID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="amount">
-            <column name="Amount" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="price">
-            <column name="Price" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="money">
-            <column name="Money" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="note">
-            <column name="Note" sql-type="varchar(500)" length="500" not-null="true"/>
-        </property>
-        <property name="alreadyArrive">
-            <column name="AlreadyArrive" sql-type="decimal(10)" precision="10" not-null="true"/>
-        </property>
-        <property name="noDutyMoney">
-            <column name="NoDutyMoney" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="noDutyPrice">
-            <column name="NoDutyPrice" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="duty">
-            <column name="Duty" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="stockType">
-            <column name="StockType" sql-type="varchar(50)" length="50" not-null="true"/>
-        </property>
-        <property name="stockTax">
-            <column name="StockTax" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="stockId" column="StockID"/>
+        <property name="productId" column="ProductID"/>
+        <property name="amount" column="Amount"/>
+        <property name="price" column="Price"/>
+        <property name="money" column="Money"/>
+        <property name="note" column="Note"/>
+        <property name="alreadyArrive" column="AlreadyArrive"/>
+        <property name="noDutyMoney" column="NoDutyMoney"/>
+        <property name="noDutyPrice" column="NoDutyPrice"/>
+        <property name="duty" column="Duty"/>
+        <property name="stockType" column="StockType"/>
+        <property name="stockTax" column="StockTax"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

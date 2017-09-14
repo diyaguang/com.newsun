@@ -4,12 +4,6 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:23 PM
- */
 @Entity
 @Table(name = "Stock", schema = "dygstudio", catalog = "")
 public class StockEntity {
@@ -38,9 +32,11 @@ public class StockEntity {
     private String editId;
     private String inDepotId;
     private Date inDepotDate;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -50,7 +46,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 100)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -60,7 +56,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "ProviderID", nullable = true, length = 40)
+    @Column(name = "ProviderID")
     public String getProviderId() {
         return providerId;
     }
@@ -70,7 +66,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "BespeakDate", nullable = true)
+    @Column(name = "BespeakDate")
     public Date getBespeakDate() {
         return bespeakDate;
     }
@@ -80,7 +76,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "ForecastDate", nullable = true)
+    @Column(name = "ForecastDate")
     public Date getForecastDate() {
         return forecastDate;
     }
@@ -90,7 +86,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "InDepotCode", nullable = true, length = 100)
+    @Column(name = "InDepotCode")
     public String getInDepotCode() {
         return inDepotCode;
     }
@@ -100,7 +96,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "DepotID", nullable = true, length = 40)
+    @Column(name = "DepotID")
     public String getDepotId() {
         return depotId;
     }
@@ -110,7 +106,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "UserID", nullable = true, length = 40)
+    @Column(name = "UserID")
     public String getUserId() {
         return userId;
     }
@@ -120,7 +116,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "StockType", nullable = true)
+    @Column(name = "StockType")
     public Integer getStockType() {
         return stockType;
     }
@@ -130,7 +126,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "ConveyanceType", nullable = true)
+    @Column(name = "ConveyanceType")
     public Integer getConveyanceType() {
         return conveyanceType;
     }
@@ -140,7 +136,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "PayNote", nullable = true, length = 500)
+    @Column(name = "PayNote")
     public String getPayNote() {
         return payNote;
     }
@@ -150,7 +146,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 500)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
@@ -160,7 +156,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "ProductState", nullable = true)
+    @Column(name = "ProductState")
     public Integer getProductState() {
         return productState;
     }
@@ -170,7 +166,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "Amount", nullable = true, precision = 2)
+    @Column(name = "Amount")
     public BigDecimal getAmount() {
         return amount;
     }
@@ -180,7 +176,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "Money", nullable = true, precision = 2)
+    @Column(name = "Money")
     public BigDecimal getMoney() {
         return money;
     }
@@ -190,7 +186,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "State", nullable = true)
+    @Column(name = "State")
     public Integer getState() {
         return state;
     }
@@ -200,7 +196,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
@@ -210,7 +206,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "InputUserID", nullable = true, length = 40)
+    @Column(name = "InputUserID")
     public String getInputUserId() {
         return inputUserId;
     }
@@ -220,7 +216,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "InputDate", nullable = true)
+    @Column(name = "InputDate")
     public Date getInputDate() {
         return inputDate;
     }
@@ -230,7 +226,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "ModifyUserID", nullable = true, length = 40)
+    @Column(name = "ModifyUserID")
     public String getModifyUserId() {
         return modifyUserId;
     }
@@ -240,7 +236,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "ModifyDate", nullable = true)
+    @Column(name = "ModifyDate")
     public Date getModifyDate() {
         return modifyDate;
     }
@@ -250,7 +246,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "ApproveState", nullable = true)
+    @Column(name = "ApproveState")
     public Integer getApproveState() {
         return approveState;
     }
@@ -260,7 +256,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "EditID", nullable = true, length = 40)
+    @Column(name = "EditID")
     public String getEditId() {
         return editId;
     }
@@ -270,7 +266,7 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "InDepotID", nullable = true, length = 40)
+    @Column(name = "InDepotID")
     public String getInDepotId() {
         return inDepotId;
     }
@@ -280,13 +276,33 @@ public class StockEntity {
     }
 
     @Basic
-    @Column(name = "InDepotDate", nullable = true)
+    @Column(name = "InDepotDate")
     public Date getInDepotDate() {
         return inDepotDate;
     }
 
     public void setInDepotDate(Date inDepotDate) {
         this.inDepotDate = inDepotDate;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -322,6 +338,8 @@ public class StockEntity {
         if (editId != null ? !editId.equals(that.editId) : that.editId != null) return false;
         if (inDepotId != null ? !inDepotId.equals(that.inDepotId) : that.inDepotId != null) return false;
         if (inDepotDate != null ? !inDepotDate.equals(that.inDepotDate) : that.inDepotDate != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -353,6 +371,8 @@ public class StockEntity {
         result = 31 * result + (editId != null ? editId.hashCode() : 0);
         result = 31 * result + (inDepotId != null ? inDepotId.hashCode() : 0);
         result = 31 * result + (inDepotDate != null ? inDepotDate.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

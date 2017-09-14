@@ -5,12 +5,6 @@ import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.Timestamp;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:21 PM
- */
 @Entity
 @Table(name = "CommInOutDepot", schema = "dygstudio", catalog = "")
 public class CommInOutDepotEntity {
@@ -32,9 +26,11 @@ public class CommInOutDepotEntity {
     private String editId;
     private Integer type;
     private String note;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -44,7 +40,7 @@ public class CommInOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 100)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -54,7 +50,7 @@ public class CommInOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "ClientID", nullable = true, length = 40)
+    @Column(name = "ClientID")
     public String getClientId() {
         return clientId;
     }
@@ -64,7 +60,7 @@ public class CommInOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "DepotID", nullable = false, length = 40)
+    @Column(name = "DepotID")
     public String getDepotId() {
         return depotId;
     }
@@ -74,7 +70,7 @@ public class CommInOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "UserID", nullable = true, length = 40)
+    @Column(name = "UserID")
     public String getUserId() {
         return userId;
     }
@@ -84,7 +80,7 @@ public class CommInOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "DepotDate", nullable = true)
+    @Column(name = "DepotDate")
     public Timestamp getDepotDate() {
         return depotDate;
     }
@@ -94,7 +90,7 @@ public class CommInOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "Amount", nullable = true, precision = 2)
+    @Column(name = "Amount")
     public BigDecimal getAmount() {
         return amount;
     }
@@ -104,7 +100,7 @@ public class CommInOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "Money", nullable = true, precision = 2)
+    @Column(name = "Money")
     public BigDecimal getMoney() {
         return money;
     }
@@ -114,7 +110,7 @@ public class CommInOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "State", nullable = true)
+    @Column(name = "State")
     public Integer getState() {
         return state;
     }
@@ -124,7 +120,7 @@ public class CommInOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
@@ -134,7 +130,7 @@ public class CommInOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "InputUserID", nullable = true, length = 40)
+    @Column(name = "InputUserID")
     public String getInputUserId() {
         return inputUserId;
     }
@@ -144,7 +140,7 @@ public class CommInOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "InputDate", nullable = true)
+    @Column(name = "InputDate")
     public Date getInputDate() {
         return inputDate;
     }
@@ -154,7 +150,7 @@ public class CommInOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "ModifyUserID", nullable = true, length = 40)
+    @Column(name = "ModifyUserID")
     public String getModifyUserId() {
         return modifyUserId;
     }
@@ -164,7 +160,7 @@ public class CommInOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "ModifyDate", nullable = true)
+    @Column(name = "ModifyDate")
     public Date getModifyDate() {
         return modifyDate;
     }
@@ -174,7 +170,7 @@ public class CommInOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "ApproveState", nullable = true)
+    @Column(name = "ApproveState")
     public Integer getApproveState() {
         return approveState;
     }
@@ -184,7 +180,7 @@ public class CommInOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "EditID", nullable = true, length = 40)
+    @Column(name = "EditID")
     public String getEditId() {
         return editId;
     }
@@ -194,7 +190,7 @@ public class CommInOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "Type", nullable = true)
+    @Column(name = "Type")
     public Integer getType() {
         return type;
     }
@@ -204,13 +200,33 @@ public class CommInOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 500)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -238,6 +254,8 @@ public class CommInOutDepotEntity {
         if (editId != null ? !editId.equals(that.editId) : that.editId != null) return false;
         if (type != null ? !type.equals(that.type) : that.type != null) return false;
         if (note != null ? !note.equals(that.note) : that.note != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -262,6 +280,8 @@ public class CommInOutDepotEntity {
         result = 31 * result + (editId != null ? editId.hashCode() : 0);
         result = 31 * result + (type != null ? type.hashCode() : 0);
         result = 31 * result + (note != null ? note.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

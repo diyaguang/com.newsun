@@ -3,12 +3,6 @@ package com.newsun.web.entity;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:23 PM
- */
 @Entity
 @Table(name = "Service", schema = "dygstudio", catalog = "")
 public class ServiceEntity {
@@ -23,9 +17,11 @@ public class ServiceEntity {
     private Timestamp revertDate;
     private String userId;
     private Integer isDel;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -35,7 +31,7 @@ public class ServiceEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 50)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -45,7 +41,7 @@ public class ServiceEntity {
     }
 
     @Basic
-    @Column(name = "ClientID", nullable = true, length = 40)
+    @Column(name = "ClientID")
     public String getClientId() {
         return clientId;
     }
@@ -55,7 +51,7 @@ public class ServiceEntity {
     }
 
     @Basic
-    @Column(name = "Title", nullable = true, length = 300)
+    @Column(name = "Title")
     public String getTitle() {
         return title;
     }
@@ -65,7 +61,7 @@ public class ServiceEntity {
     }
 
     @Basic
-    @Column(name = "Contents", nullable = true, length = -1)
+    @Column(name = "Contents")
     public String getContents() {
         return contents;
     }
@@ -75,7 +71,7 @@ public class ServiceEntity {
     }
 
     @Basic
-    @Column(name = "InputDate", nullable = true)
+    @Column(name = "InputDate")
     public Timestamp getInputDate() {
         return inputDate;
     }
@@ -85,7 +81,7 @@ public class ServiceEntity {
     }
 
     @Basic
-    @Column(name = "IsRevert", nullable = true)
+    @Column(name = "IsRevert")
     public Integer getIsRevert() {
         return isRevert;
     }
@@ -95,7 +91,7 @@ public class ServiceEntity {
     }
 
     @Basic
-    @Column(name = "RevertContents", nullable = true, length = -1)
+    @Column(name = "RevertContents")
     public String getRevertContents() {
         return revertContents;
     }
@@ -105,7 +101,7 @@ public class ServiceEntity {
     }
 
     @Basic
-    @Column(name = "RevertDate", nullable = true)
+    @Column(name = "RevertDate")
     public Timestamp getRevertDate() {
         return revertDate;
     }
@@ -115,7 +111,7 @@ public class ServiceEntity {
     }
 
     @Basic
-    @Column(name = "UserID", nullable = true, length = 40)
+    @Column(name = "UserID")
     public String getUserId() {
         return userId;
     }
@@ -125,13 +121,33 @@ public class ServiceEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
 
     public void setIsDel(Integer isDel) {
         this.isDel = isDel;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -153,6 +169,8 @@ public class ServiceEntity {
         if (revertDate != null ? !revertDate.equals(that.revertDate) : that.revertDate != null) return false;
         if (userId != null ? !userId.equals(that.userId) : that.userId != null) return false;
         if (isDel != null ? !isDel.equals(that.isDel) : that.isDel != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -170,6 +188,8 @@ public class ServiceEntity {
         result = 31 * result + (revertDate != null ? revertDate.hashCode() : 0);
         result = 31 * result + (userId != null ? userId.hashCode() : 0);
         result = 31 * result + (isDel != null ? isDel.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

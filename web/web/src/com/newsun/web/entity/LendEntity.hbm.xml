@@ -5,80 +5,32 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.LendEntity" table="Lend" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="code">
-            <column name="Code" sql-type="varchar(50)" length="50" not-null="true"/>
-        </property>
-        <property name="clientId">
-            <column name="ClientID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="deliveryType">
-            <column name="DeliveryType" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="lendType">
-            <column name="LendType" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="depotId">
-            <column name="DepotID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="address">
-            <column name="Address" sql-type="varchar(200)" length="200" not-null="true"/>
-        </property>
-        <property name="buyDate">
-            <column name="BuyDate" sql-type="date" not-null="true"/>
-        </property>
-        <property name="deliveryDate">
-            <column name="DeliveryDate" sql-type="date" not-null="true"/>
-        </property>
-        <property name="orderId">
-            <column name="OrderID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="discount">
-            <column name="Discount" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="amount">
-            <column name="Amount" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="money">
-            <column name="Money" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="note">
-            <column name="Note" sql-type="varchar(500)" length="500" not-null="true"/>
-        </property>
-        <property name="editId">
-            <column name="EditID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="inputUserId">
-            <column name="InputUserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="inputDate">
-            <column name="InputDate" sql-type="date" not-null="true"/>
-        </property>
-        <property name="modifyUserId">
-            <column name="ModifyUserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="modifyDate">
-            <column name="ModifyDate" sql-type="date" not-null="true"/>
-        </property>
-        <property name="isDel">
-            <column name="IsDel" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="approveState">
-            <column name="ApproveState" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="state">
-            <column name="State" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="priceTypeName">
-            <column name="PriceTypeName" sql-type="varchar(50)" length="50" not-null="true"/>
-        </property>
-        <property name="userName">
-            <column name="UserName" sql-type="varchar(50)" length="50" not-null="true"/>
-        </property>
-        <property name="isSend">
-            <column name="IsSend" sql-type="int(11)" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="code" column="Code"/>
+        <property name="clientId" column="ClientID"/>
+        <property name="deliveryType" column="DeliveryType"/>
+        <property name="lendType" column="LendType"/>
+        <property name="depotId" column="DepotID"/>
+        <property name="address" column="Address"/>
+        <property name="buyDate" column="BuyDate"/>
+        <property name="deliveryDate" column="DeliveryDate"/>
+        <property name="orderId" column="OrderID"/>
+        <property name="discount" column="Discount"/>
+        <property name="amount" column="Amount"/>
+        <property name="money" column="Money"/>
+        <property name="note" column="Note"/>
+        <property name="editId" column="EditID"/>
+        <property name="inputUserId" column="InputUserID"/>
+        <property name="inputDate" column="InputDate"/>
+        <property name="modifyUserId" column="ModifyUserID"/>
+        <property name="modifyDate" column="ModifyDate"/>
+        <property name="isDel" column="IsDel"/>
+        <property name="approveState" column="ApproveState"/>
+        <property name="state" column="State"/>
+        <property name="priceTypeName" column="PriceTypeName"/>
+        <property name="userName" column="UserName"/>
+        <property name="isSend" column="IsSend"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

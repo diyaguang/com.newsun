@@ -3,12 +3,6 @@ package com.newsun.web.entity;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:23 PM
- */
 @Entity
 @Table(name = "Todo", schema = "dygstudio", catalog = "")
 public class TodoEntity {
@@ -20,9 +14,11 @@ public class TodoEntity {
     private Integer status;
     private Integer isDel;
     private String userId;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -32,7 +28,7 @@ public class TodoEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 100)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -42,7 +38,7 @@ public class TodoEntity {
     }
 
     @Basic
-    @Column(name = "Title", nullable = true, length = 200)
+    @Column(name = "Title")
     public String getTitle() {
         return title;
     }
@@ -52,7 +48,7 @@ public class TodoEntity {
     }
 
     @Basic
-    @Column(name = "OpUrl", nullable = true, length = 300)
+    @Column(name = "OpUrl")
     public String getOpUrl() {
         return opUrl;
     }
@@ -62,7 +58,7 @@ public class TodoEntity {
     }
 
     @Basic
-    @Column(name = "CreateDate", nullable = true)
+    @Column(name = "CreateDate")
     public Timestamp getCreateDate() {
         return createDate;
     }
@@ -72,7 +68,7 @@ public class TodoEntity {
     }
 
     @Basic
-    @Column(name = "Status", nullable = true)
+    @Column(name = "Status")
     public Integer getStatus() {
         return status;
     }
@@ -82,7 +78,7 @@ public class TodoEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
@@ -92,13 +88,33 @@ public class TodoEntity {
     }
 
     @Basic
-    @Column(name = "UserID", nullable = true, length = 40)
+    @Column(name = "UserID")
     public String getUserId() {
         return userId;
     }
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -116,6 +132,8 @@ public class TodoEntity {
         if (status != null ? !status.equals(that.status) : that.status != null) return false;
         if (isDel != null ? !isDel.equals(that.isDel) : that.isDel != null) return false;
         if (userId != null ? !userId.equals(that.userId) : that.userId != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -130,6 +148,8 @@ public class TodoEntity {
         result = 31 * result + (status != null ? status.hashCode() : 0);
         result = 31 * result + (isDel != null ? isDel.hashCode() : 0);
         result = 31 * result + (userId != null ? userId.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

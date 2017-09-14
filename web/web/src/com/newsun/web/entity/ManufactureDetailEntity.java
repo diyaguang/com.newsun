@@ -3,12 +3,6 @@ package com.newsun.web.entity;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:22 PM
- */
 @Entity
 @Table(name = "ManufactureDetail", schema = "dygstudio", catalog = "")
 public class ManufactureDetailEntity {
@@ -18,9 +12,11 @@ public class ManufactureDetailEntity {
     private BigDecimal amount;
     private BigDecimal money;
     private BigDecimal price;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -30,7 +26,7 @@ public class ManufactureDetailEntity {
     }
 
     @Basic
-    @Column(name = "ManufactureID", nullable = true, length = 40)
+    @Column(name = "ManufactureID")
     public String getManufactureId() {
         return manufactureId;
     }
@@ -40,7 +36,7 @@ public class ManufactureDetailEntity {
     }
 
     @Basic
-    @Column(name = "ProductID", nullable = true, length = 40)
+    @Column(name = "ProductID")
     public String getProductId() {
         return productId;
     }
@@ -50,7 +46,7 @@ public class ManufactureDetailEntity {
     }
 
     @Basic
-    @Column(name = "Amount", nullable = true, precision = 2)
+    @Column(name = "Amount")
     public BigDecimal getAmount() {
         return amount;
     }
@@ -60,7 +56,7 @@ public class ManufactureDetailEntity {
     }
 
     @Basic
-    @Column(name = "Money", nullable = true, precision = 2)
+    @Column(name = "Money")
     public BigDecimal getMoney() {
         return money;
     }
@@ -70,13 +66,33 @@ public class ManufactureDetailEntity {
     }
 
     @Basic
-    @Column(name = "Price", nullable = true, precision = 2)
+    @Column(name = "Price")
     public BigDecimal getPrice() {
         return price;
     }
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -93,6 +109,8 @@ public class ManufactureDetailEntity {
         if (amount != null ? !amount.equals(that.amount) : that.amount != null) return false;
         if (money != null ? !money.equals(that.money) : that.money != null) return false;
         if (price != null ? !price.equals(that.price) : that.price != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -105,6 +123,8 @@ public class ManufactureDetailEntity {
         result = 31 * result + (amount != null ? amount.hashCode() : 0);
         result = 31 * result + (money != null ? money.hashCode() : 0);
         result = 31 * result + (price != null ? price.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

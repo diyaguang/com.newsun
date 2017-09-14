@@ -3,12 +3,6 @@ package com.newsun.web.entity;
 import javax.persistence.*;
 import java.sql.Date;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:23 PM
- */
 @Entity
 @Table(name = "TaskOpDetail", schema = "dygstudio", catalog = "")
 public class TaskOpDetailEntity {
@@ -18,9 +12,11 @@ public class TaskOpDetailEntity {
     private Date opDate;
     private Integer opType;
     private String contents;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -30,7 +26,7 @@ public class TaskOpDetailEntity {
     }
 
     @Basic
-    @Column(name = "TaskID", nullable = true, length = 40)
+    @Column(name = "TaskID")
     public String getTaskId() {
         return taskId;
     }
@@ -40,7 +36,7 @@ public class TaskOpDetailEntity {
     }
 
     @Basic
-    @Column(name = "UserID", nullable = true, length = 40)
+    @Column(name = "UserID")
     public String getUserId() {
         return userId;
     }
@@ -50,7 +46,7 @@ public class TaskOpDetailEntity {
     }
 
     @Basic
-    @Column(name = "OpDate", nullable = true)
+    @Column(name = "OpDate")
     public Date getOpDate() {
         return opDate;
     }
@@ -60,7 +56,7 @@ public class TaskOpDetailEntity {
     }
 
     @Basic
-    @Column(name = "OpType", nullable = true)
+    @Column(name = "OpType")
     public Integer getOpType() {
         return opType;
     }
@@ -70,13 +66,33 @@ public class TaskOpDetailEntity {
     }
 
     @Basic
-    @Column(name = "Contents", nullable = true, length = 500)
+    @Column(name = "Contents")
     public String getContents() {
         return contents;
     }
 
     public void setContents(String contents) {
         this.contents = contents;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -92,6 +108,8 @@ public class TaskOpDetailEntity {
         if (opDate != null ? !opDate.equals(that.opDate) : that.opDate != null) return false;
         if (opType != null ? !opType.equals(that.opType) : that.opType != null) return false;
         if (contents != null ? !contents.equals(that.contents) : that.contents != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -104,6 +122,8 @@ public class TaskOpDetailEntity {
         result = 31 * result + (opDate != null ? opDate.hashCode() : 0);
         result = 31 * result + (opType != null ? opType.hashCode() : 0);
         result = 31 * result + (contents != null ? contents.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

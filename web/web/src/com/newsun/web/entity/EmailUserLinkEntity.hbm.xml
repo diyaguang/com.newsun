@@ -5,17 +5,11 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.EmailUserLinkEntity" table="Email_User_Link" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="emailId">
-            <column name="EmailID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="userId">
-            <column name="UserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="isDel">
-            <column name="IsDel" sql-type="int(11)" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="emailId" column="EmailID"/>
+        <property name="userId" column="UserID"/>
+        <property name="isDel" column="IsDel"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

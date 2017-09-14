@@ -4,12 +4,6 @@ import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:21 PM
- */
 @Entity
 @Table(name = "InOutDepot", schema = "dygstudio", catalog = "")
 public class InOutDepotEntity {
@@ -28,9 +22,11 @@ public class InOutDepotEntity {
     private String note;
     private Integer isChange;
     private String uniqueId;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -40,7 +36,7 @@ public class InOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 100)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -50,7 +46,7 @@ public class InOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "BillID", nullable = true, length = 40)
+    @Column(name = "BillID")
     public String getBillId() {
         return billId;
     }
@@ -60,7 +56,7 @@ public class InOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "BillType", nullable = true)
+    @Column(name = "BillType")
     public Integer getBillType() {
         return billType;
     }
@@ -70,7 +66,7 @@ public class InOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "OpDate", nullable = true)
+    @Column(name = "OpDate")
     public Timestamp getOpDate() {
         return opDate;
     }
@@ -80,7 +76,7 @@ public class InOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "UserID", nullable = true, length = 40)
+    @Column(name = "UserID")
     public String getUserId() {
         return userId;
     }
@@ -90,7 +86,7 @@ public class InOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "InputUserID", nullable = true, length = 40)
+    @Column(name = "InputUserID")
     public String getInputUserId() {
         return inputUserId;
     }
@@ -100,7 +96,7 @@ public class InOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "InputDate", nullable = true)
+    @Column(name = "InputDate")
     public Date getInputDate() {
         return inputDate;
     }
@@ -110,7 +106,7 @@ public class InOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "ModifyUserID", nullable = true, length = 40)
+    @Column(name = "ModifyUserID")
     public String getModifyUserId() {
         return modifyUserId;
     }
@@ -120,7 +116,7 @@ public class InOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "ModifyDate", nullable = true)
+    @Column(name = "ModifyDate")
     public Date getModifyDate() {
         return modifyDate;
     }
@@ -130,7 +126,7 @@ public class InOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "ApproveState", nullable = true)
+    @Column(name = "ApproveState")
     public Integer getApproveState() {
         return approveState;
     }
@@ -140,7 +136,7 @@ public class InOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
@@ -150,7 +146,7 @@ public class InOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 500)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
@@ -160,7 +156,7 @@ public class InOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "IsChange", nullable = true)
+    @Column(name = "IsChange")
     public Integer getIsChange() {
         return isChange;
     }
@@ -170,13 +166,33 @@ public class InOutDepotEntity {
     }
 
     @Basic
-    @Column(name = "UniqueID", nullable = true, length = 40)
+    @Column(name = "UniqueID")
     public String getUniqueId() {
         return uniqueId;
     }
 
     public void setUniqueId(String uniqueId) {
         this.uniqueId = uniqueId;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -201,6 +217,8 @@ public class InOutDepotEntity {
         if (note != null ? !note.equals(that.note) : that.note != null) return false;
         if (isChange != null ? !isChange.equals(that.isChange) : that.isChange != null) return false;
         if (uniqueId != null ? !uniqueId.equals(that.uniqueId) : that.uniqueId != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -222,6 +240,8 @@ public class InOutDepotEntity {
         result = 31 * result + (note != null ? note.hashCode() : 0);
         result = 31 * result + (isChange != null ? isChange.hashCode() : 0);
         result = 31 * result + (uniqueId != null ? uniqueId.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

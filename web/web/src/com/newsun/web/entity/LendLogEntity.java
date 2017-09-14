@@ -4,12 +4,6 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:22 PM
- */
 @Entity
 @Table(name = "LendLog", schema = "dygstudio", catalog = "")
 public class LendLogEntity {
@@ -22,9 +16,11 @@ public class LendLogEntity {
     private Timestamp opDate;
     private Integer opUser;
     private String productId;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -34,7 +30,7 @@ public class LendLogEntity {
     }
 
     @Basic
-    @Column(name = "LendID", nullable = true, length = 40)
+    @Column(name = "LendID")
     public String getLendId() {
         return lendId;
     }
@@ -44,7 +40,7 @@ public class LendLogEntity {
     }
 
     @Basic
-    @Column(name = "ChangeSaleAmount", nullable = true, precision = 2)
+    @Column(name = "ChangeSaleAmount")
     public BigDecimal getChangeSaleAmount() {
         return changeSaleAmount;
     }
@@ -54,7 +50,7 @@ public class LendLogEntity {
     }
 
     @Basic
-    @Column(name = "ChangeSaleMoney", nullable = true, precision = 2)
+    @Column(name = "ChangeSaleMoney")
     public BigDecimal getChangeSaleMoney() {
         return changeSaleMoney;
     }
@@ -64,7 +60,7 @@ public class LendLogEntity {
     }
 
     @Basic
-    @Column(name = "Amount", nullable = true, precision = 2)
+    @Column(name = "Amount")
     public BigDecimal getAmount() {
         return amount;
     }
@@ -74,7 +70,7 @@ public class LendLogEntity {
     }
 
     @Basic
-    @Column(name = "Money", nullable = true, precision = 2)
+    @Column(name = "Money")
     public BigDecimal getMoney() {
         return money;
     }
@@ -84,7 +80,7 @@ public class LendLogEntity {
     }
 
     @Basic
-    @Column(name = "OpDate", nullable = true)
+    @Column(name = "OpDate")
     public Timestamp getOpDate() {
         return opDate;
     }
@@ -94,7 +90,7 @@ public class LendLogEntity {
     }
 
     @Basic
-    @Column(name = "OpUser", nullable = true)
+    @Column(name = "OpUser")
     public Integer getOpUser() {
         return opUser;
     }
@@ -104,13 +100,33 @@ public class LendLogEntity {
     }
 
     @Basic
-    @Column(name = "ProductID", nullable = true, length = 40)
+    @Column(name = "ProductID")
     public String getProductId() {
         return productId;
     }
 
     public void setProductId(String productId) {
         this.productId = productId;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -131,6 +147,8 @@ public class LendLogEntity {
         if (opDate != null ? !opDate.equals(that.opDate) : that.opDate != null) return false;
         if (opUser != null ? !opUser.equals(that.opUser) : that.opUser != null) return false;
         if (productId != null ? !productId.equals(that.productId) : that.productId != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -146,6 +164,8 @@ public class LendLogEntity {
         result = 31 * result + (opDate != null ? opDate.hashCode() : 0);
         result = 31 * result + (opUser != null ? opUser.hashCode() : 0);
         result = 31 * result + (productId != null ? productId.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

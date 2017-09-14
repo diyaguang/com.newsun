@@ -5,20 +5,12 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.DictionaryEntity" table="Dictionary" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="type">
-            <column name="Type" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="code">
-            <column name="Code" sql-type="varchar(100)" length="100" not-null="true"/>
-        </property>
-        <property name="name">
-            <column name="Name" sql-type="varchar(200)" length="200" not-null="true"/>
-        </property>
-        <property name="state">
-            <column name="State" sql-type="int(11)" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="type" column="Type"/>
+        <property name="code" column="Code"/>
+        <property name="name" column="Name"/>
+        <property name="state" column="State"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

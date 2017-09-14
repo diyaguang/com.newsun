@@ -4,12 +4,6 @@ import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:22 PM
- */
 @Entity
 @Table(name = "Orders", schema = "dygstudio", catalog = "")
 public class OrdersEntity {
@@ -33,9 +27,11 @@ public class OrdersEntity {
     private String note;
     private Integer expressState;
     private String accountId;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -45,7 +41,7 @@ public class OrdersEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 100)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -55,7 +51,7 @@ public class OrdersEntity {
     }
 
     @Basic
-    @Column(name = "ClientID", nullable = true, length = 40)
+    @Column(name = "ClientID")
     public String getClientId() {
         return clientId;
     }
@@ -65,7 +61,7 @@ public class OrdersEntity {
     }
 
     @Basic
-    @Column(name = "UserName", nullable = true, length = 50)
+    @Column(name = "UserName")
     public String getUserName() {
         return userName;
     }
@@ -75,7 +71,7 @@ public class OrdersEntity {
     }
 
     @Basic
-    @Column(name = "OpDate", nullable = true)
+    @Column(name = "OpDate")
     public Timestamp getOpDate() {
         return opDate;
     }
@@ -85,7 +81,7 @@ public class OrdersEntity {
     }
 
     @Basic
-    @Column(name = "AllAmount", nullable = true, precision = 0)
+    @Column(name = "AllAmount")
     public Integer getAllAmount() {
         return allAmount;
     }
@@ -95,7 +91,7 @@ public class OrdersEntity {
     }
 
     @Basic
-    @Column(name = "AllMoney", nullable = true, precision = 0)
+    @Column(name = "AllMoney")
     public Integer getAllMoney() {
         return allMoney;
     }
@@ -105,7 +101,7 @@ public class OrdersEntity {
     }
 
     @Basic
-    @Column(name = "RealMoney", nullable = true, precision = 0)
+    @Column(name = "RealMoney")
     public Integer getRealMoney() {
         return realMoney;
     }
@@ -115,7 +111,7 @@ public class OrdersEntity {
     }
 
     @Basic
-    @Column(name = "OrderState", nullable = true)
+    @Column(name = "OrderState")
     public Integer getOrderState() {
         return orderState;
     }
@@ -125,7 +121,7 @@ public class OrdersEntity {
     }
 
     @Basic
-    @Column(name = "UserID", nullable = true, length = 40)
+    @Column(name = "UserID")
     public String getUserId() {
         return userId;
     }
@@ -135,7 +131,7 @@ public class OrdersEntity {
     }
 
     @Basic
-    @Column(name = "InputUserID", nullable = true, length = 40)
+    @Column(name = "InputUserID")
     public String getInputUserId() {
         return inputUserId;
     }
@@ -145,7 +141,7 @@ public class OrdersEntity {
     }
 
     @Basic
-    @Column(name = "InputDate", nullable = true)
+    @Column(name = "InputDate")
     public Date getInputDate() {
         return inputDate;
     }
@@ -155,7 +151,7 @@ public class OrdersEntity {
     }
 
     @Basic
-    @Column(name = "ModifyUserID", nullable = true, length = 40)
+    @Column(name = "ModifyUserID")
     public String getModifyUserId() {
         return modifyUserId;
     }
@@ -165,7 +161,7 @@ public class OrdersEntity {
     }
 
     @Basic
-    @Column(name = "ModifyDate", nullable = true)
+    @Column(name = "ModifyDate")
     public Date getModifyDate() {
         return modifyDate;
     }
@@ -175,7 +171,7 @@ public class OrdersEntity {
     }
 
     @Basic
-    @Column(name = "ApproveState", nullable = true)
+    @Column(name = "ApproveState")
     public Integer getApproveState() {
         return approveState;
     }
@@ -185,7 +181,7 @@ public class OrdersEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
@@ -195,7 +191,7 @@ public class OrdersEntity {
     }
 
     @Basic
-    @Column(name = "EditID", nullable = true, length = 40)
+    @Column(name = "EditID")
     public String getEditId() {
         return editId;
     }
@@ -205,7 +201,7 @@ public class OrdersEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 500)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
@@ -215,7 +211,7 @@ public class OrdersEntity {
     }
 
     @Basic
-    @Column(name = "ExpressState", nullable = true)
+    @Column(name = "ExpressState")
     public Integer getExpressState() {
         return expressState;
     }
@@ -225,13 +221,33 @@ public class OrdersEntity {
     }
 
     @Basic
-    @Column(name = "AccountID", nullable = true, length = 40)
+    @Column(name = "AccountID")
     public String getAccountId() {
         return accountId;
     }
 
     public void setAccountId(String accountId) {
         this.accountId = accountId;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -261,6 +277,8 @@ public class OrdersEntity {
         if (note != null ? !note.equals(that.note) : that.note != null) return false;
         if (expressState != null ? !expressState.equals(that.expressState) : that.expressState != null) return false;
         if (accountId != null ? !accountId.equals(that.accountId) : that.accountId != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -287,6 +305,8 @@ public class OrdersEntity {
         result = 31 * result + (note != null ? note.hashCode() : 0);
         result = 31 * result + (expressState != null ? expressState.hashCode() : 0);
         result = 31 * result + (accountId != null ? accountId.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

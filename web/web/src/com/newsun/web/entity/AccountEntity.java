@@ -3,12 +3,6 @@ package com.newsun.web.entity;
 import javax.persistence.*;
 import java.sql.Date;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:20 PM
- */
 @Entity
 @Table(name = "Account", schema = "dygstudio", catalog = "")
 public class AccountEntity {
@@ -23,9 +17,11 @@ public class AccountEntity {
     private Integer approveState;
     private Integer isDel;
     private String note;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -35,7 +31,7 @@ public class AccountEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 100)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -45,7 +41,7 @@ public class AccountEntity {
     }
 
     @Basic
-    @Column(name = "Type", nullable = true)
+    @Column(name = "Type")
     public Integer getType() {
         return type;
     }
@@ -55,7 +51,7 @@ public class AccountEntity {
     }
 
     @Basic
-    @Column(name = "Name", nullable = true, length = 100)
+    @Column(name = "Name")
     public String getName() {
         return name;
     }
@@ -65,7 +61,7 @@ public class AccountEntity {
     }
 
     @Basic
-    @Column(name = "InputUserID", nullable = true)
+    @Column(name = "InputUserID")
     public Integer getInputUserId() {
         return inputUserId;
     }
@@ -75,7 +71,7 @@ public class AccountEntity {
     }
 
     @Basic
-    @Column(name = "InputDate", nullable = true)
+    @Column(name = "InputDate")
     public Date getInputDate() {
         return inputDate;
     }
@@ -85,7 +81,7 @@ public class AccountEntity {
     }
 
     @Basic
-    @Column(name = "ModifyUserID", nullable = true)
+    @Column(name = "ModifyUserID")
     public Integer getModifyUserId() {
         return modifyUserId;
     }
@@ -95,7 +91,7 @@ public class AccountEntity {
     }
 
     @Basic
-    @Column(name = "ModifyDate", nullable = true)
+    @Column(name = "ModifyDate")
     public Date getModifyDate() {
         return modifyDate;
     }
@@ -105,7 +101,7 @@ public class AccountEntity {
     }
 
     @Basic
-    @Column(name = "ApproveState", nullable = true)
+    @Column(name = "ApproveState")
     public Integer getApproveState() {
         return approveState;
     }
@@ -115,7 +111,7 @@ public class AccountEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
@@ -125,13 +121,33 @@ public class AccountEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 500)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -152,6 +168,8 @@ public class AccountEntity {
         if (approveState != null ? !approveState.equals(that.approveState) : that.approveState != null) return false;
         if (isDel != null ? !isDel.equals(that.isDel) : that.isDel != null) return false;
         if (note != null ? !note.equals(that.note) : that.note != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -169,6 +187,8 @@ public class AccountEntity {
         result = 31 * result + (approveState != null ? approveState.hashCode() : 0);
         result = 31 * result + (isDel != null ? isDel.hashCode() : 0);
         result = 31 * result + (note != null ? note.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

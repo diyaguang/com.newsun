@@ -5,23 +5,13 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.ExpressStateLogEntity" table="ExpressStateLog" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="expressStateId">
-            <column name="ExpressStateID" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="opDate">
-            <column name="OpDate" sql-type="datetime" not-null="true"/>
-        </property>
-        <property name="stateType">
-            <column name="StateType" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="userId">
-            <column name="UserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="note">
-            <column name="Note" sql-type="varchar(200)" length="200" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="expressStateId" column="ExpressStateID"/>
+        <property name="opDate" column="OpDate"/>
+        <property name="stateType" column="StateType"/>
+        <property name="userId" column="UserID"/>
+        <property name="note" column="Note"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

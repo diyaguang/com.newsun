@@ -5,47 +5,21 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.AccountBillEntity" table="AccountBill" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="code">
-            <column name="Code" sql-type="varchar(100)" length="100" not-null="true"/>
-        </property>
-        <property name="date">
-            <column name="Date" sql-type="datetime" not-null="true"/>
-        </property>
-        <property name="billId">
-            <column name="BillID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="inputUserId">
-            <column name="InputUserID" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="inputDate">
-            <column name="InputDate" sql-type="datetime" not-null="true"/>
-        </property>
-        <property name="modifyUserId">
-            <column name="ModifyUserID" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="modifyDate">
-            <column name="ModifyDate" sql-type="date" not-null="true"/>
-        </property>
-        <property name="approveState">
-            <column name="ApproveState" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="isDel">
-            <column name="IsDel" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="note">
-            <column name="Note" sql-type="varchar(500)" length="500" not-null="true"/>
-        </property>
-        <property name="type">
-            <column name="Type" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="money">
-            <column name="Money" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="uniqueId">
-            <column name="UniqueID" sql-type="varchar(50)" length="50" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="code" column="Code"/>
+        <property name="date" column="Date"/>
+        <property name="billId" column="BillID"/>
+        <property name="inputUserId" column="InputUserID"/>
+        <property name="inputDate" column="InputDate"/>
+        <property name="modifyUserId" column="ModifyUserID"/>
+        <property name="modifyDate" column="ModifyDate"/>
+        <property name="approveState" column="ApproveState"/>
+        <property name="isDel" column="IsDel"/>
+        <property name="note" column="Note"/>
+        <property name="type" column="Type"/>
+        <property name="money" column="Money"/>
+        <property name="uniqueId" column="UniqueID"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

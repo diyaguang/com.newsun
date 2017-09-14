@@ -4,12 +4,6 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:20 PM
- */
 @Entity
 @Table(name = "Bad", schema = "dygstudio", catalog = "")
 public class BadEntity {
@@ -28,9 +22,11 @@ public class BadEntity {
     private String modifyUserId;
     private Timestamp modifyDate;
     private Integer isDel;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -40,7 +36,7 @@ public class BadEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 50)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -50,7 +46,7 @@ public class BadEntity {
     }
 
     @Basic
-    @Column(name = "DepotID", nullable = true, length = 40)
+    @Column(name = "DepotID")
     public String getDepotId() {
         return depotId;
     }
@@ -60,7 +56,7 @@ public class BadEntity {
     }
 
     @Basic
-    @Column(name = "BadDate", nullable = true)
+    @Column(name = "BadDate")
     public Timestamp getBadDate() {
         return badDate;
     }
@@ -70,7 +66,7 @@ public class BadEntity {
     }
 
     @Basic
-    @Column(name = "Amount", nullable = true, precision = 2)
+    @Column(name = "Amount")
     public BigDecimal getAmount() {
         return amount;
     }
@@ -80,7 +76,7 @@ public class BadEntity {
     }
 
     @Basic
-    @Column(name = "Money", nullable = true, precision = 2)
+    @Column(name = "Money")
     public BigDecimal getMoney() {
         return money;
     }
@@ -90,7 +86,7 @@ public class BadEntity {
     }
 
     @Basic
-    @Column(name = "UserID", nullable = true, length = 40)
+    @Column(name = "UserID")
     public String getUserId() {
         return userId;
     }
@@ -100,7 +96,7 @@ public class BadEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 500)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
@@ -110,7 +106,7 @@ public class BadEntity {
     }
 
     @Basic
-    @Column(name = "EditID", nullable = true, length = 40)
+    @Column(name = "EditID")
     public String getEditId() {
         return editId;
     }
@@ -120,7 +116,7 @@ public class BadEntity {
     }
 
     @Basic
-    @Column(name = "ApproveState", nullable = true)
+    @Column(name = "ApproveState")
     public Integer getApproveState() {
         return approveState;
     }
@@ -130,7 +126,7 @@ public class BadEntity {
     }
 
     @Basic
-    @Column(name = "InputUserID", nullable = true, length = 40)
+    @Column(name = "InputUserID")
     public String getInputUserId() {
         return inputUserId;
     }
@@ -140,7 +136,7 @@ public class BadEntity {
     }
 
     @Basic
-    @Column(name = "InputDate", nullable = true)
+    @Column(name = "InputDate")
     public Timestamp getInputDate() {
         return inputDate;
     }
@@ -150,7 +146,7 @@ public class BadEntity {
     }
 
     @Basic
-    @Column(name = "ModifyUserID", nullable = true, length = 40)
+    @Column(name = "ModifyUserID")
     public String getModifyUserId() {
         return modifyUserId;
     }
@@ -160,7 +156,7 @@ public class BadEntity {
     }
 
     @Basic
-    @Column(name = "ModifyDate", nullable = true)
+    @Column(name = "ModifyDate")
     public Timestamp getModifyDate() {
         return modifyDate;
     }
@@ -170,13 +166,33 @@ public class BadEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
 
     public void setIsDel(Integer isDel) {
         this.isDel = isDel;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -204,6 +220,8 @@ public class BadEntity {
             return false;
         if (modifyDate != null ? !modifyDate.equals(badEntity.modifyDate) : badEntity.modifyDate != null) return false;
         if (isDel != null ? !isDel.equals(badEntity.isDel) : badEntity.isDel != null) return false;
+        if (bookId != null ? !bookId.equals(badEntity.bookId) : badEntity.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(badEntity.companyId) : badEntity.companyId != null) return false;
 
         return true;
     }
@@ -225,6 +243,8 @@ public class BadEntity {
         result = 31 * result + (modifyUserId != null ? modifyUserId.hashCode() : 0);
         result = 31 * result + (modifyDate != null ? modifyDate.hashCode() : 0);
         result = 31 * result + (isDel != null ? isDel.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

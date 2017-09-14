@@ -3,12 +3,6 @@ package com.newsun.web.entity;
 import javax.persistence.*;
 import java.sql.Date;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:22 PM
- */
 @Entity
 @Table(name = "Price", schema = "dygstudio", catalog = "")
 public class PriceEntity {
@@ -30,9 +24,11 @@ public class PriceEntity {
     private Integer state;
     private Integer isDel;
     private Integer approveState;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -42,7 +38,7 @@ public class PriceEntity {
     }
 
     @Basic
-    @Column(name = "PriceType", nullable = true)
+    @Column(name = "PriceType")
     public Integer getPriceType() {
         return priceType;
     }
@@ -52,7 +48,7 @@ public class PriceEntity {
     }
 
     @Basic
-    @Column(name = "ProductID", nullable = true, length = 40)
+    @Column(name = "ProductID")
     public String getProductId() {
         return productId;
     }
@@ -62,7 +58,7 @@ public class PriceEntity {
     }
 
     @Basic
-    @Column(name = "Model", nullable = true, length = 300)
+    @Column(name = "Model")
     public String getModel() {
         return model;
     }
@@ -72,7 +68,7 @@ public class PriceEntity {
     }
 
     @Basic
-    @Column(name = "Price", nullable = true, precision = 0)
+    @Column(name = "Price")
     public Double getPrice() {
         return price;
     }
@@ -82,7 +78,7 @@ public class PriceEntity {
     }
 
     @Basic
-    @Column(name = "ModifyPrice", nullable = true, precision = 0)
+    @Column(name = "ModifyPrice")
     public Double getModifyPrice() {
         return modifyPrice;
     }
@@ -92,7 +88,7 @@ public class PriceEntity {
     }
 
     @Basic
-    @Column(name = "MasterUnit", nullable = true)
+    @Column(name = "MasterUnit")
     public Integer getMasterUnit() {
         return masterUnit;
     }
@@ -102,7 +98,7 @@ public class PriceEntity {
     }
 
     @Basic
-    @Column(name = "LastModifyDate", nullable = true)
+    @Column(name = "LastModifyDate")
     public Date getLastModifyDate() {
         return lastModifyDate;
     }
@@ -112,7 +108,7 @@ public class PriceEntity {
     }
 
     @Basic
-    @Column(name = "ApproveUserID", nullable = true, length = 40)
+    @Column(name = "ApproveUserID")
     public String getApproveUserId() {
         return approveUserId;
     }
@@ -122,7 +118,7 @@ public class PriceEntity {
     }
 
     @Basic
-    @Column(name = "ApproveDate", nullable = true)
+    @Column(name = "ApproveDate")
     public Date getApproveDate() {
         return approveDate;
     }
@@ -132,7 +128,7 @@ public class PriceEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 500)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
@@ -142,7 +138,7 @@ public class PriceEntity {
     }
 
     @Basic
-    @Column(name = "InputUserID", nullable = true, length = 40)
+    @Column(name = "InputUserID")
     public String getInputUserId() {
         return inputUserId;
     }
@@ -152,7 +148,7 @@ public class PriceEntity {
     }
 
     @Basic
-    @Column(name = "InputDate", nullable = true)
+    @Column(name = "InputDate")
     public Date getInputDate() {
         return inputDate;
     }
@@ -162,7 +158,7 @@ public class PriceEntity {
     }
 
     @Basic
-    @Column(name = "ModifyUserID", nullable = true, length = 40)
+    @Column(name = "ModifyUserID")
     public String getModifyUserId() {
         return modifyUserId;
     }
@@ -172,7 +168,7 @@ public class PriceEntity {
     }
 
     @Basic
-    @Column(name = "ModifyDate", nullable = true)
+    @Column(name = "ModifyDate")
     public Date getModifyDate() {
         return modifyDate;
     }
@@ -182,7 +178,7 @@ public class PriceEntity {
     }
 
     @Basic
-    @Column(name = "State", nullable = true)
+    @Column(name = "State")
     public Integer getState() {
         return state;
     }
@@ -192,7 +188,7 @@ public class PriceEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
@@ -202,13 +198,33 @@ public class PriceEntity {
     }
 
     @Basic
-    @Column(name = "ApproveState", nullable = true)
+    @Column(name = "ApproveState")
     public Integer getApproveState() {
         return approveState;
     }
 
     public void setApproveState(Integer approveState) {
         this.approveState = approveState;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -238,6 +254,8 @@ public class PriceEntity {
         if (state != null ? !state.equals(that.state) : that.state != null) return false;
         if (isDel != null ? !isDel.equals(that.isDel) : that.isDel != null) return false;
         if (approveState != null ? !approveState.equals(that.approveState) : that.approveState != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -262,6 +280,8 @@ public class PriceEntity {
         result = 31 * result + (state != null ? state.hashCode() : 0);
         result = 31 * result + (isDel != null ? isDel.hashCode() : 0);
         result = 31 * result + (approveState != null ? approveState.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

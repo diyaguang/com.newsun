@@ -5,41 +5,19 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.SmsEntity" table="SMS" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="code">
-            <column name="Code" sql-type="varchar(50)" length="50" not-null="true"/>
-        </property>
-        <property name="message">
-            <column name="Message" sql-type="varchar(1000)" length="1000" not-null="true"/>
-        </property>
-        <property name="userId">
-            <column name="UserID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="createDate">
-            <column name="CreateDate" sql-type="datetime" not-null="true"/>
-        </property>
-        <property name="errorInfo">
-            <column name="ErrorInfo" sql-type="varchar(1000)" length="1000" not-null="true"/>
-        </property>
-        <property name="opType">
-            <column name="OpType" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="createType">
-            <column name="CreateType" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="address">
-            <column name="Address" sql-type="varchar(20)" length="20" not-null="true"/>
-        </property>
-        <property name="sendDate">
-            <column name="SendDate" sql-type="datetime" not-null="true"/>
-        </property>
-        <property name="status">
-            <column name="Status" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="isDel">
-            <column name="IsDel" sql-type="int(11)" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="code" column="Code"/>
+        <property name="message" column="Message"/>
+        <property name="userId" column="UserID"/>
+        <property name="createDate" column="CreateDate"/>
+        <property name="errorInfo" column="ErrorInfo"/>
+        <property name="opType" column="OpType"/>
+        <property name="createType" column="CreateType"/>
+        <property name="address" column="Address"/>
+        <property name="sendDate" column="SendDate"/>
+        <property name="status" column="Status"/>
+        <property name="isDel" column="IsDel"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

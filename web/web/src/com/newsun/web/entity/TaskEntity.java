@@ -3,12 +3,6 @@ package com.newsun.web.entity;
 import javax.persistence.*;
 import java.sql.Date;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:23 PM
- */
 @Entity
 @Table(name = "Task", schema = "dygstudio", catalog = "")
 public class TaskEntity {
@@ -27,9 +21,11 @@ public class TaskEntity {
     private Date modifyDate;
     private Integer isDel;
     private String editId;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -39,7 +35,7 @@ public class TaskEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 50)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -49,7 +45,7 @@ public class TaskEntity {
     }
 
     @Basic
-    @Column(name = "TaskType", nullable = true)
+    @Column(name = "TaskType")
     public Integer getTaskType() {
         return taskType;
     }
@@ -59,7 +55,7 @@ public class TaskEntity {
     }
 
     @Basic
-    @Column(name = "Title", nullable = true, length = 200)
+    @Column(name = "Title")
     public String getTitle() {
         return title;
     }
@@ -69,7 +65,7 @@ public class TaskEntity {
     }
 
     @Basic
-    @Column(name = "Contents", nullable = true, length = 1000)
+    @Column(name = "Contents")
     public String getContents() {
         return contents;
     }
@@ -79,7 +75,7 @@ public class TaskEntity {
     }
 
     @Basic
-    @Column(name = "Date", nullable = true)
+    @Column(name = "Date")
     public Date getDate() {
         return date;
     }
@@ -89,7 +85,7 @@ public class TaskEntity {
     }
 
     @Basic
-    @Column(name = "TaskState", nullable = true)
+    @Column(name = "TaskState")
     public Integer getTaskState() {
         return taskState;
     }
@@ -99,7 +95,7 @@ public class TaskEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 200)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
@@ -109,7 +105,7 @@ public class TaskEntity {
     }
 
     @Basic
-    @Column(name = "NextUserID", nullable = true, length = 40)
+    @Column(name = "NextUserID")
     public String getNextUserId() {
         return nextUserId;
     }
@@ -119,7 +115,7 @@ public class TaskEntity {
     }
 
     @Basic
-    @Column(name = "InputUserID", nullable = true, length = 40)
+    @Column(name = "InputUserID")
     public String getInputUserId() {
         return inputUserId;
     }
@@ -129,7 +125,7 @@ public class TaskEntity {
     }
 
     @Basic
-    @Column(name = "InputDate", nullable = true)
+    @Column(name = "InputDate")
     public Date getInputDate() {
         return inputDate;
     }
@@ -139,7 +135,7 @@ public class TaskEntity {
     }
 
     @Basic
-    @Column(name = "ModifyUserID", nullable = true, length = 40)
+    @Column(name = "ModifyUserID")
     public String getModifyUserId() {
         return modifyUserId;
     }
@@ -149,7 +145,7 @@ public class TaskEntity {
     }
 
     @Basic
-    @Column(name = "ModifyDate", nullable = true)
+    @Column(name = "ModifyDate")
     public Date getModifyDate() {
         return modifyDate;
     }
@@ -159,7 +155,7 @@ public class TaskEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
@@ -169,13 +165,33 @@ public class TaskEntity {
     }
 
     @Basic
-    @Column(name = "EditID", nullable = true, length = 40)
+    @Column(name = "EditID")
     public String getEditId() {
         return editId;
     }
 
     public void setEditId(String editId) {
         this.editId = editId;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -200,6 +216,8 @@ public class TaskEntity {
         if (modifyDate != null ? !modifyDate.equals(that.modifyDate) : that.modifyDate != null) return false;
         if (isDel != null ? !isDel.equals(that.isDel) : that.isDel != null) return false;
         if (editId != null ? !editId.equals(that.editId) : that.editId != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -221,6 +239,8 @@ public class TaskEntity {
         result = 31 * result + (modifyDate != null ? modifyDate.hashCode() : 0);
         result = 31 * result + (isDel != null ? isDel.hashCode() : 0);
         result = 31 * result + (editId != null ? editId.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

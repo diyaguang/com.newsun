@@ -3,12 +3,6 @@ package com.newsun.web.entity;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:21 PM
- */
 @Entity
 @Table(name = "BusinessActivity", schema = "dygstudio", catalog = "")
 public class BusinessActivityEntity {
@@ -24,9 +18,11 @@ public class BusinessActivityEntity {
     private Timestamp apprpveDate;
     private Integer isDel;
     private String editId;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -36,7 +32,7 @@ public class BusinessActivityEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 50)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -46,7 +42,7 @@ public class BusinessActivityEntity {
     }
 
     @Basic
-    @Column(name = "Name", nullable = true, length = 200)
+    @Column(name = "Name")
     public String getName() {
         return name;
     }
@@ -56,7 +52,7 @@ public class BusinessActivityEntity {
     }
 
     @Basic
-    @Column(name = "Contents", nullable = true, length = -1)
+    @Column(name = "Contents")
     public String getContents() {
         return contents;
     }
@@ -66,7 +62,7 @@ public class BusinessActivityEntity {
     }
 
     @Basic
-    @Column(name = "ActivityDate", nullable = true)
+    @Column(name = "ActivityDate")
     public Timestamp getActivityDate() {
         return activityDate;
     }
@@ -76,7 +72,7 @@ public class BusinessActivityEntity {
     }
 
     @Basic
-    @Column(name = "InputUserID", nullable = true, length = 40)
+    @Column(name = "InputUserID")
     public String getInputUserId() {
         return inputUserId;
     }
@@ -86,7 +82,7 @@ public class BusinessActivityEntity {
     }
 
     @Basic
-    @Column(name = "InputDate", nullable = true)
+    @Column(name = "InputDate")
     public Timestamp getInputDate() {
         return inputDate;
     }
@@ -96,7 +92,7 @@ public class BusinessActivityEntity {
     }
 
     @Basic
-    @Column(name = "ApproveState", nullable = true)
+    @Column(name = "ApproveState")
     public Integer getApproveState() {
         return approveState;
     }
@@ -106,7 +102,7 @@ public class BusinessActivityEntity {
     }
 
     @Basic
-    @Column(name = "ApproveUserID", nullable = true, length = 40)
+    @Column(name = "ApproveUserID")
     public String getApproveUserId() {
         return approveUserId;
     }
@@ -116,7 +112,7 @@ public class BusinessActivityEntity {
     }
 
     @Basic
-    @Column(name = "ApprpveDate", nullable = true)
+    @Column(name = "ApprpveDate")
     public Timestamp getApprpveDate() {
         return apprpveDate;
     }
@@ -126,7 +122,7 @@ public class BusinessActivityEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
@@ -136,13 +132,33 @@ public class BusinessActivityEntity {
     }
 
     @Basic
-    @Column(name = "EditID", nullable = true, length = 40)
+    @Column(name = "EditID")
     public String getEditId() {
         return editId;
     }
 
     public void setEditId(String editId) {
         this.editId = editId;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -165,6 +181,8 @@ public class BusinessActivityEntity {
         if (apprpveDate != null ? !apprpveDate.equals(that.apprpveDate) : that.apprpveDate != null) return false;
         if (isDel != null ? !isDel.equals(that.isDel) : that.isDel != null) return false;
         if (editId != null ? !editId.equals(that.editId) : that.editId != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -183,6 +201,8 @@ public class BusinessActivityEntity {
         result = 31 * result + (apprpveDate != null ? apprpveDate.hashCode() : 0);
         result = 31 * result + (isDel != null ? isDel.hashCode() : 0);
         result = 31 * result + (editId != null ? editId.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

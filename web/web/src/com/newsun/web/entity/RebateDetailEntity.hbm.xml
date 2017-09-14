@@ -5,14 +5,10 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.RebateDetailEntity" table="RebateDetail" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="rebateId">
-            <column name="RebateID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="balanceId">
-            <column name="BalanceID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="rebateId" column="RebateID"/>
+        <property name="balanceId" column="BalanceID"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>

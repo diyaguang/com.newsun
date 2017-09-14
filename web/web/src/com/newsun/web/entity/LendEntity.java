@@ -4,12 +4,6 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
 
-/**
- * Created with IntelliJ IDEA.
- * Description: com.newsun.web.entity
- * User: diyaguang
- * Date: 2017-09-07 4:21 PM
- */
 @Entity
 @Table(name = "Lend", schema = "dygstudio", catalog = "")
 public class LendEntity {
@@ -38,9 +32,11 @@ public class LendEntity {
     private String priceTypeName;
     private String userName;
     private Integer isSend;
+    private String bookId;
+    private String companyId;
 
     @Id
-    @Column(name = "ID", nullable = false, length = 40)
+    @Column(name = "ID")
     public String getId() {
         return id;
     }
@@ -50,7 +46,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "Code", nullable = true, length = 50)
+    @Column(name = "Code")
     public String getCode() {
         return code;
     }
@@ -60,7 +56,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "ClientID", nullable = true, length = 40)
+    @Column(name = "ClientID")
     public String getClientId() {
         return clientId;
     }
@@ -70,7 +66,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "DeliveryType", nullable = true)
+    @Column(name = "DeliveryType")
     public Integer getDeliveryType() {
         return deliveryType;
     }
@@ -80,7 +76,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "LendType", nullable = true)
+    @Column(name = "LendType")
     public Integer getLendType() {
         return lendType;
     }
@@ -90,7 +86,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "DepotID", nullable = true, length = 40)
+    @Column(name = "DepotID")
     public String getDepotId() {
         return depotId;
     }
@@ -100,7 +96,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "Address", nullable = true, length = 200)
+    @Column(name = "Address")
     public String getAddress() {
         return address;
     }
@@ -110,7 +106,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "BuyDate", nullable = true)
+    @Column(name = "BuyDate")
     public Date getBuyDate() {
         return buyDate;
     }
@@ -120,7 +116,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "DeliveryDate", nullable = true)
+    @Column(name = "DeliveryDate")
     public Date getDeliveryDate() {
         return deliveryDate;
     }
@@ -130,7 +126,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "OrderID", nullable = true, length = 40)
+    @Column(name = "OrderID")
     public String getOrderId() {
         return orderId;
     }
@@ -140,7 +136,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "Discount", nullable = true, precision = 2)
+    @Column(name = "Discount")
     public BigDecimal getDiscount() {
         return discount;
     }
@@ -150,7 +146,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "Amount", nullable = true, precision = 2)
+    @Column(name = "Amount")
     public BigDecimal getAmount() {
         return amount;
     }
@@ -160,7 +156,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "Money", nullable = true, precision = 2)
+    @Column(name = "Money")
     public BigDecimal getMoney() {
         return money;
     }
@@ -170,7 +166,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "Note", nullable = true, length = 500)
+    @Column(name = "Note")
     public String getNote() {
         return note;
     }
@@ -180,7 +176,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "EditID", nullable = true, length = 40)
+    @Column(name = "EditID")
     public String getEditId() {
         return editId;
     }
@@ -190,7 +186,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "InputUserID", nullable = true, length = 40)
+    @Column(name = "InputUserID")
     public String getInputUserId() {
         return inputUserId;
     }
@@ -200,7 +196,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "InputDate", nullable = true)
+    @Column(name = "InputDate")
     public Date getInputDate() {
         return inputDate;
     }
@@ -210,7 +206,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "ModifyUserID", nullable = true, length = 40)
+    @Column(name = "ModifyUserID")
     public String getModifyUserId() {
         return modifyUserId;
     }
@@ -220,7 +216,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "ModifyDate", nullable = true)
+    @Column(name = "ModifyDate")
     public Date getModifyDate() {
         return modifyDate;
     }
@@ -230,7 +226,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "IsDel", nullable = true)
+    @Column(name = "IsDel")
     public Integer getIsDel() {
         return isDel;
     }
@@ -240,7 +236,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "ApproveState", nullable = true)
+    @Column(name = "ApproveState")
     public Integer getApproveState() {
         return approveState;
     }
@@ -250,7 +246,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "State", nullable = true)
+    @Column(name = "State")
     public Integer getState() {
         return state;
     }
@@ -260,7 +256,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "PriceTypeName", nullable = true, length = 50)
+    @Column(name = "PriceTypeName")
     public String getPriceTypeName() {
         return priceTypeName;
     }
@@ -270,7 +266,7 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "UserName", nullable = true, length = 50)
+    @Column(name = "UserName")
     public String getUserName() {
         return userName;
     }
@@ -280,13 +276,33 @@ public class LendEntity {
     }
 
     @Basic
-    @Column(name = "IsSend", nullable = true)
+    @Column(name = "IsSend")
     public Integer getIsSend() {
         return isSend;
     }
 
     public void setIsSend(Integer isSend) {
         this.isSend = isSend;
+    }
+
+    @Basic
+    @Column(name = "BookID")
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Basic
+    @Column(name = "CompanyID")
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
     }
 
     @Override
@@ -322,6 +338,8 @@ public class LendEntity {
             return false;
         if (userName != null ? !userName.equals(that.userName) : that.userName != null) return false;
         if (isSend != null ? !isSend.equals(that.isSend) : that.isSend != null) return false;
+        if (bookId != null ? !bookId.equals(that.bookId) : that.bookId != null) return false;
+        if (companyId != null ? !companyId.equals(that.companyId) : that.companyId != null) return false;
 
         return true;
     }
@@ -353,6 +371,8 @@ public class LendEntity {
         result = 31 * result + (priceTypeName != null ? priceTypeName.hashCode() : 0);
         result = 31 * result + (userName != null ? userName.hashCode() : 0);
         result = 31 * result + (isSend != null ? isSend.hashCode() : 0);
+        result = 31 * result + (bookId != null ? bookId.hashCode() : 0);
+        result = 31 * result + (companyId != null ? companyId.hashCode() : 0);
         return result;
     }
 }

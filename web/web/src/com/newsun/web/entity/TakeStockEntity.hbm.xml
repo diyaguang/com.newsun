@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.newsun.web.entity.TakeStockEntity" table="TakeStock" schema="dygstudio">
+        <id name="id" column="ID"/>
+        <property name="code" column="Code"/>
+        <property name="checkDate" column="CheckDate"/>
+        <property name="depotId" column="DepotID"/>
+        <property name="userId" column="UserID"/>
+        <property name="note" column="Note"/>
+        <property name="editId" column="EditID"/>
+        <property name="inputUserId" column="InputUserID"/>
+        <property name="inputDate" column="InputDate"/>
+        <property name="modifyUserId" column="ModifyUserID"/>
+        <property name="modifyDate" column="ModifyDate"/>
+        <property name="isDel" column="IsDel"/>
+        <property name="approveState" column="ApproveState"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
+    </class>
+</hibernate-mapping>

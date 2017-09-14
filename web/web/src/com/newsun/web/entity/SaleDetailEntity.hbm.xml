@@ -5,50 +5,22 @@
 <hibernate-mapping>
 
     <class name="com.newsun.web.entity.SaleDetailEntity" table="SaleDetail" schema="dygstudio">
-        <id name="id">
-            <column name="ID" sql-type="varchar(40)" length="40"/>
-        </id>
-        <property name="saleId">
-            <column name="SaleID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="isLargess">
-            <column name="IsLargess" sql-type="int(11)" not-null="true"/>
-        </property>
-        <property name="productId">
-            <column name="ProductID" sql-type="varchar(40)" length="40" not-null="true"/>
-        </property>
-        <property name="price">
-            <column name="Price" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="money">
-            <column name="Money" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="amount">
-            <column name="Amount" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="realPrice">
-            <column name="RealPrice" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="realMoney">
-            <column name="RealMoney" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="note">
-            <column name="Note" sql-type="varchar(500)" length="500" not-null="true"/>
-        </property>
-        <property name="discount">
-            <column name="Discount" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="depotCount">
-            <column name="DepotCount" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="priceTypeName">
-            <column name="PriceTypeName" sql-type="varchar(50)" length="50" not-null="true"/>
-        </property>
-        <property name="bzPrice">
-            <column name="BzPrice" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
-        <property name="bzDiscount">
-            <column name="BzDiscount" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
-        </property>
+        <id name="id" column="ID"/>
+        <property name="saleId" column="SaleID"/>
+        <property name="isLargess" column="IsLargess"/>
+        <property name="productId" column="ProductID"/>
+        <property name="price" column="Price"/>
+        <property name="money" column="Money"/>
+        <property name="amount" column="Amount"/>
+        <property name="realPrice" column="RealPrice"/>
+        <property name="realMoney" column="RealMoney"/>
+        <property name="note" column="Note"/>
+        <property name="discount" column="Discount"/>
+        <property name="depotCount" column="DepotCount"/>
+        <property name="priceTypeName" column="PriceTypeName"/>
+        <property name="bzPrice" column="BzPrice"/>
+        <property name="bzDiscount" column="BzDiscount"/>
+        <property name="bookId" column="BookID"/>
+        <property name="companyId" column="CompanyID"/>
     </class>
 </hibernate-mapping>
