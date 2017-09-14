@@ -22,12 +22,5 @@
     </servlet-mapping>
     -->
 
-    <context-param>
-        <param-name>baseUrl</param-name>
-        <param-value>http://localhost:8080</param-value>
-    </context-param>
-    <context-param>
-        <param-name>ApiBaseUrl</param-name>
-        <param-value>/api</param-value>
-    </context-param>
+
 </web-app>
