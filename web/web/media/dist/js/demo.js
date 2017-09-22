@@ -16,9 +16,27 @@ $(function () {
 
   var $pushMenu       = $('[data-toggle="push-menu"]').data('lte.pushmenu')
   var $controlSidebar = $('[data-toggle="control-sidebar"]').data('lte.controlsidebar')
-  var $layout         = $('body').data('lte.layout')
+  var $layout         = $('body').data('lte.layout');
 
-  /**
+  var $pagePath       = $('.content-wrapper .content-header');
+
+    /**
+     * Modify by diyaguang 20170921 修改，直接使用头，菜单，底部 被 fix
+     */
+    var cls = "fixed";
+    $('body').toggleClass(cls);
+    $layout.fixSidebar();
+    if ($('body').hasClass('fixed') && cls == 'fixed') {
+        $pushMenu.expandOnHover();
+        $layout.activate();
+    }
+    $controlSidebar.fix();
+    $pagePath.css({"position":"absolute","height":$pagePath.wrapper.height});
+
+    //====================================================================================================
+
+
+    /**
    * List of all the available skins
    *
    * @type Array

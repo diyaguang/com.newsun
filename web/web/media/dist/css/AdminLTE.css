@@ -109,7 +109,7 @@ body {
 }
 .fixed .content-wrapper,
 .fixed .right-side {
-  padding-top: 50px;
+  padding-top: 100px;   /* Modify by diyaguang 20170921 */
 }
 @media (max-width: 767px) {
   .fixed .content-wrapper,
@@ -197,7 +197,7 @@ a:focus {
   margin-bottom: 0;
   margin-left: 230px;
   border: none;
-  min-height: 50px;
+  min-height: 45px;
   border-radius: 0;
 }
 .layout-top-nav .main-header .navbar {
@@ -306,7 +306,7 @@ a:focus {
 }
 .content-header {
   position: relative;
-  padding: 15px 15px 0 15px;
+  padding: 7px 15px 0 15px;
 }
 .content-header > h1 {
   margin: 0;
@@ -319,15 +319,15 @@ a:focus {
   font-weight: 300;
 }
 .content-header > .breadcrumb {
-  float: right;
+  /*float: right; */
   background: transparent;
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 12px;
+  font-size: 13px;
   padding: 7px 5px;
-  position: absolute;
+  /* position: absolute; */
   top: 15px;
-  right: 10px;
+  /* right: 10px; */
   border-radius: 2px;
 }
 .content-header > .breadcrumb > li > a {
