@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
  * Date: 2017-09-07 5:51 PM
  */
 @Repository("userDao")
-public class UserDaoImpl  extends BaseRepositoryImpl<UsersEntity,String> implements UserDao{
+public class UserDaoImpl extends BaseRepositoryImpl<UsersEntity,String> implements UserDao{
 }

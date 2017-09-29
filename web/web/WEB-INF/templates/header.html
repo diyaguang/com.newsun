@@ -271,12 +271,14 @@
             </div>
 
         </nav>
-        <nav class="navbar navbar-static-top" style="background: #ffffff">
+        <nav class="navbar navbar-static-top" style="background: transparent">
             <div>
                 <section class="content-header">
-                    <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-map-o"></i> 首页</a></li>
-                        <li class="active">我的工作台</li>
+                    <ol class="breadcrumb" >
+                        <i class="fa fa-map-o"></i>
+                        <li th:each="pagePath:${pagePaths}">
+                            <a href="#" th:text="${pagePath.pathName}" th:href="${pagePath.pathUrl}">页面地址</a>
+                        </li>
                     </ol>
                 </section>
             </div>
